@@ -2,7 +2,6 @@
 import { jsx, css } from '@emotion/react';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { Layout, Menu } from 'antd';
 import styled from '@emotion/styled';
 
 import LogoImg from '../assets/Main/logo.png';
