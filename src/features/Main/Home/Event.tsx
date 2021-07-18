@@ -20,7 +20,7 @@ export const Event = () => {
 
 const EventWrapper = css`
   position: absolute;
-  width: 140vh;
+  width: 100vh;
   height: 400px;
   left: 282px;
   top: 135px;
