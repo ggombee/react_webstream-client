@@ -120,13 +120,13 @@ export const MainLayout = ({ children }: IMainProps) => {
 const MainWrapper = css`
   top: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(99, 99, 99, 0) -34.44%, #0d0d0d 42.61%, #000000 100%);
+  background: #000000;
 `;
 
 const Sidebar = css`
   overflow: auto;
   height: 100vh;
-  background: black;
+  background: #080808;
   left: 0;
   top: 0;
   position: absolute;

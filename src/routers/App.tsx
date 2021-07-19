@@ -6,6 +6,9 @@ import MainRouter from './main';
 // const Home = lazy(() => import('./routes/Home'));
 // const About = lazy(() => import('./routes/About'));
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 /*
  * TODO
  * 1. Main
