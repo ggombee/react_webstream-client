@@ -18,6 +18,8 @@ import FavoriteActImg from '../assets/Main/favorite_on.png';
 
 import PlaylistImg from '../assets/Main/playlist_off.png';
 import PlaylistActImg from '../assets/Main/playlist_on.png';
+import CartImg from '../assets/Main/cart_off.png';
+import CartActImg from '../assets/Main/cart_on.png';
 import { Header } from '../features/Main/Common/Header';
 
 /*
@@ -57,18 +59,31 @@ export const MainLayout = ({ children }: IMainProps) => {
             <p
               css={MenuItem}
               onClick={() => handleClickMenu('/home', 0)}
-              style={index === 0 ? { color: 'red' } : { color: 'white' }}
+              style={index === 0 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
               {index === 0 ? <img src={HomeActImg} /> : <img src={HomeImg} />}
-              Home
+              <span
+                css={css`
+                  margin-left: 19px;
+                `}
+              >
+                Home
+              </span>
             </p>
             <p
               css={MenuItem}
               onClick={() => handleClickMenu('/hottrack', 1)}
-              style={index === 1 ? { color: 'red' } : { color: 'white' }}
+              style={index === 1 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
               {index === 1 ? <img src={HotActImg}></img> : <img src={HotImg}></img>}
-              Hot Track
+
+              <span
+                css={css`
+                  margin-left: 19px;
+                `}
+              >
+                Hot Track
+              </span>
             </p>
           </div>
           <div css={MenuGroup}>
@@ -76,26 +91,58 @@ export const MainLayout = ({ children }: IMainProps) => {
             <p
               css={MenuItem}
               onClick={() => handleClickMenu('/beatmaker', 2)}
-              style={index === 2 ? { color: 'red' } : { color: 'white' }}
+              style={index === 2 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
               {index === 2 ? <img src={BeatActImg}></img> : <img src={BeatImg}></img>}
-              Beat Maker
+              <span
+                css={css`
+                  margin-left: 19px;
+                `}
+              >
+                Beat Maker
+              </span>
             </p>
             <p
               css={MenuItem}
               onClick={() => handleClickMenu('/favorites', 3)}
-              style={index === 3 ? { color: 'red' } : { color: 'white' }}
+              style={index === 3 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
               {index === 3 ? <img src={FavoriteActImg}></img> : <img src={FavoriteImg}></img>}
-              Favorites
+              <span
+                css={css`
+                  margin-left: 19px;
+                `}
+              >
+                Favorites
+              </span>
             </p>
             <p
               css={MenuItem}
               onClick={() => handleClickMenu('/playlist', 4)}
-              style={index === 4 ? { color: 'red' } : { color: 'white' }}
+              style={index === 4 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
               {index === 4 ? <img src={PlaylistActImg}></img> : <img src={PlaylistImg}></img>}
-              Playlist
+              <span
+                css={css`
+                  margin-left: 19px;
+                `}
+              >
+                Playlist
+              </span>
+            </p>
+            <p
+              css={MenuItem}
+              onClick={() => handleClickMenu('/cart', 5)}
+              style={index === 5 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+            >
+              {index === 5 ? <img src={CartActImg}></img> : <img src={CartImg}></img>}
+              <span
+                css={css`
+                  margin-left: 19px;
+                `}
+              >
+                Cart
+              </span>
             </p>
           </div>
         </div>
@@ -161,8 +208,7 @@ const MenuGroup = css`
   line-height: 22px;
   margin-bottom: 100px;
   img {
-    margin-right: 10px;
-    margin-top: 10px;
+    vertical-align: middle;
   }
 `;
 
@@ -179,5 +225,5 @@ const MenuItem = css`
 const Content = css`
   height: 100vh;
   overflow: initial;
-  background: linear-gradient(180deg, rgba(99, 99, 99, 0) -34.44%, #0d0d0d 42.61%, #000000 100%);
+  background: #000000;
 `;
