@@ -12,7 +12,7 @@ export const Event = () => {
     infinite: false,
     arrows: false,
     slidesToScroll: 1,
-    slidesToShow: 3,
+    slidesToShow: 3.5,
     afterChange: (current: React.SetStateAction<number>) => setActiveSlide(current),
     responsive: [
       {
@@ -44,29 +44,77 @@ export const Event = () => {
   return (
     <div css={EventWrapper}>
       <p>Event</p>
-      <span>
+      {/* <span>
         <span>{activeSlide + 1}</span>/<span>5</span>
-      </span>
+      </span> */}
       <Slider {...settings}>
         <div css={EventItem}>
           <img src={EventImg} />
-          <span>Hot 100 of th Month Summary</span>
-          <p>6/12 - 7/10 Track</p>
+          <span> Hot 100 of th Month Summary</span>
+          <br />
+          <span
+            css={css`
+              margin-top: 3px;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 17px;
+              line-height: 22px;
+              color: #75767c;
+            `}
+          >
+            6/12 - 7/10 Track
+          </span>
         </div>
         <div css={EventItem}>
           <img src={EventImg} />
           <span>OUT NOW</span>
-          <p>BILLBOARD KOREA MAGAZINE vol.5</p>
+          <br />
+          <span
+            css={css`
+              margin-top: 3px;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 17px;
+              line-height: 22px;
+              color: #75767c;
+            `}
+          >
+            BILLBOARD KOREA MAGAZINE vol.5
+          </span>
         </div>
         <div css={EventItem}>
           <img src={EventImg} />
           <span>MOST TOP 10 Song</span>
-          <p>K-pop 100 First half settlement</p>
+          <br />
+          <span
+            css={css`
+              margin-top: 3px;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 17px;
+              line-height: 22px;
+              color: #75767c;
+            `}
+          >
+            K-pop 100 First half settlement
+          </span>
         </div>
         <div css={EventItem}>
           <img src={EventImg} />
           <span>Vision drawn by BM of KARD</span>
-          <p>Beato News</p>
+          <br />
+          <span
+            css={css`
+              margin-top: 3px;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 17px;
+              line-height: 22px;
+              color: #75767c;
+            `}
+          >
+            Beato News
+          </span>
         </div>
       </Slider>
     </div>
@@ -75,7 +123,7 @@ export const Event = () => {
 
 const EventWrapper = css`
   position: absolute;
-  width: 150vh;
+  width: 175vh;
   height: 400px;
   left: 282px;
   top: 135px;
@@ -91,22 +139,17 @@ const EventWrapper = css`
 const EventItem = css`
   float: left;
   width: 500px;
+  color: #ffffff;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 34px;
-  color: #ffffff;
+  font-size: 21px;
+  line-height: 29px;
+
   img {
     width: 489px;
     height: 275.82px;
     left: 258px;
     top: 192.59px;
-  }
-  p {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 2px;
-    color: #75767c;
+    margin-bottom: 19px;
   }
 `;
