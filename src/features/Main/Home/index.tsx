@@ -3,6 +3,7 @@ import { jsx, css } from '@emotion/react';
 import React from 'react';
 import { Search } from '../Common/Search';
 import { Event } from './Event';
+import { HotTrack } from './HotTrack';
 
 /*
  * TODO
@@ -19,6 +20,7 @@ export const Home = () => {
   return (
     <div css={HomeWrapper}>
       <Event />
+      <HotTrack />
       {/* <div css={HomeContent}>홈컨테이너</div> */}
     </div>
   );
