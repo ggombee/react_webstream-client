@@ -31,15 +31,17 @@ const ProfileWrapper = css`
   position: absolute;
   width: 112px;
   height: 36px;
-  left: 1300px;
+  left: 1750px;
   top: 38px;
 
   img {
     margin-top: 2px;
+    vertical-align: middle;
   }
 
   span {
-    margin-left: 4px;
+    display: inline;
+    margin-left: 8px;
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
