@@ -23,49 +23,51 @@ export const HotTrack = () => {
       {TrackData.map((track: HotTrackState) => {
         return (
           <div css={TrackItem} key={track.rank}>
-            <img src={SmallCardImg} />
-            <span>
-              <p
+            <div>
+              <img src={SmallCardImg} />
+            </div>
+
+            <div>
+              <span>
+                <p
+                  css={css`
+                    margin-left: 38px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    display: inline;
+                    flex-direction: column;
+                  `}
+                >
+                  {track.rank}
+                </p>
+              </span>
+            </div>
+            <div>
+              <div
                 css={css`
-                  margin-left: 38px;
+                  display: block;
+                  margin-left: 37px;
                   font-size: 20px;
                   line-height: 28px;
-                  display: inline;
                 `}
               >
-                {track.rank}
-              </p>
-            </span>
-
-            {/* <div
+                {track.title}
+                <div
+                  css={css`
+                    margin-top: 2px;
+                    display: block;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: #75767c;
+                  `}
+                >
+                  {track.maker}
+                </div>
+              </div>
+            </div>
+            <div
               css={css`
-                flex-direction: column;
-              `}
-            > */}
-            <span
-              css={css`
-                margin-left: 37px;
-                font-size: 20px;
-                line-height: 28px;
-                height: 181px;
-              `}
-            >
-              {track.title}
-              <span
-                css={css`
-                  margin-left: 37px;
-                  font-size: 16px;
-                  line-height: 21px;
-                  color: #75767c;
-                `}
-              >
-                {track.maker}
-              </span>
-            </span>
-            {/* </div> */}
-
-            <span
-              css={css`
+                margin-left: auto;
                 float: right;
                 margin-top: 10px;
               `}
@@ -88,7 +90,7 @@ export const HotTrack = () => {
                   margin-left: 24px;
                 `}
               />
-            </span>
+            </div>
           </div>
         );
       })}
@@ -121,6 +123,7 @@ const HotTrackWrapper = css`
 `;
 
 const TrackItem = css`
+  display: flex;
   margin-top: 22px;
   width: 650px;
   height: 60px;

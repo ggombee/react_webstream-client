@@ -11,34 +11,8 @@ export const Event = () => {
     dots: false,
     infinite: false,
     arrows: false,
-    slidesToScroll: 1,
-    slidesToShow: 3.5,
+    slidesToShow: 3.15,
     afterChange: (current: React.SetStateAction<number>) => setActiveSlide(current),
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
   };
 
   return (
@@ -123,7 +97,8 @@ export const Event = () => {
 
 const EventWrapper = css`
   position: absolute;
-  width: 175vh;
+  flex-wrap: nowrap;
+  width: 165vh;
   height: 400px;
   left: 282px;
   top: 135px;
