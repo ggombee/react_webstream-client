@@ -2,6 +2,7 @@
 import { jsx, css } from '@emotion/react';
 import React from 'react';
 import { Search } from '../Common/Search';
+import { BeatMaker } from './BeatMaker';
 import { Event } from './Event';
 import { HotTrack } from './HotTrack';
 
@@ -21,7 +22,7 @@ export const Home = () => {
     <div css={HomeWrapper}>
       <Event />
       <HotTrack />
-      {/* <div css={HomeContent}>홈컨테이너</div> */}
+      <BeatMaker />
     </div>
   );
 };
@@ -30,12 +31,4 @@ const HomeWrapper = css`
   margin-left: 185px;
   height: 100vh;
   top: 0;
-`;
-
-const HomeContent = css`
-  position: absolute;
-  width: 68px;
-  height: 36px;
-  left: 282px;
-  top: 135px;
 `;

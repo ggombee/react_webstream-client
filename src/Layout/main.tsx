@@ -155,15 +155,6 @@ export const MainLayout = ({ children }: IMainProps) => {
   );
 };
 
-// <Layout>
-
-// <Layout>
-//   <StyledHeader>Beato</StyledHeader>
-//   <StyledContent>{children}</StyledContent>
-//   {/* <Footer style={{ textAlign: 'center' }}>My Home ©2020 Created by Electric-burglar</Footer> */}
-// </Layout>
-// </Layout>
-
 const MainWrapper = css`
   top: 0;
   bottom: 0;
@@ -172,17 +163,20 @@ const MainWrapper = css`
 
 const Sidebar = css`
   overflow: auto;
-  height: 100vh;
+  height: 100%;
   background: #080808;
   left: 0;
   top: 0;
   position: absolute;
   width: 185px;
-  left: 0px;
-  top: 0px;
   ::-webkit-scrollbar {
     display: none;
   }
+`;
+
+const Content = css`
+  overflow: initial;
+  background: #000000;
 `;
 
 const Logo = css`
@@ -220,10 +214,4 @@ const MenuItem = css`
   left: 38px;
   top: 234px;
   color: white;
-`;
-
-const Content = css`
-  height: 100vh;
-  overflow: initial;
-  background: #000000;
 `;
