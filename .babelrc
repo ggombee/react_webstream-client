@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    [
+      "@emotion",
+      {
+        "autoLabel": "dev-only", // 기본값 'dev-only'
+        "labelFormat": "eb-[dirname]-[filename]-[local]"
+      }
+    ]
+  ]
+}
+음.. 이
