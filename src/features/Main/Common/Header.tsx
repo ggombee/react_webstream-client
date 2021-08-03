@@ -4,12 +4,21 @@ import React from 'react';
 import { Search } from './Search';
 import StarIcon from '../../../assets/Main/stars.png';
 import ProfileImg from '../../../assets/sample/profile.png';
+import { useHistory } from 'react-router';
 
 export const Header = () => {
+  const history = useHistory();
+
+  const handleClickProfile = () => {
+    history.push({
+      pathname: '/auth/login',
+    });
+  };
+
   return (
     <div>
       <Search />
-      <div css={ProfileWrapper}>
+      <div css={ProfileWrapper} onClick={handleClickProfile}>
         <img src={StarIcon} />
         <span>Bob</span>
         <img
