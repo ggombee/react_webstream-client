@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react';
 import React from 'react';
+import { MainLayout } from '../../../Layout/main';
 import { Search } from '../Common/Search';
 import { BeatMaker } from './BeatMaker';
 import { Event } from './Event';
@@ -19,11 +20,13 @@ import { HotTrack } from './HotTrack';
 
 export const Home = () => {
   return (
-    <div css={HomeWrapper}>
-      <Event />
-      <HotTrack />
-      <BeatMaker />
-    </div>
+    <MainLayout>
+      <div css={HomeWrapper}>
+        <Event />
+        <HotTrack />
+        <BeatMaker />
+      </div>
+    </MainLayout>
   );
 };
 
