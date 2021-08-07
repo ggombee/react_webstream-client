@@ -52,6 +52,7 @@ const Main = styled.div`
   );
 `
 const Contents = styled.div`
+  padding-top: 50px;  
   height: 100%;
   padding-left: 60px;
 `
