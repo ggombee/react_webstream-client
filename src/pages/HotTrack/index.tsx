@@ -8,13 +8,11 @@ const HotTrack = () => {
   const [category, setCategory] = React.useState('popularity')
   const [subCategory, setSubCategory] = React.useState('rank')
 
-  console.log('dummy', DUMMY_TRACK_DATA)
-
   return (
     <div css={Container}>
       <div css={hotTrackWrapper}>
         <div css={titleWrapper}>
-          <p css={title}>HotTrack</p>
+          <p css={title}>Hot Track</p>
           <button value={'popularity'} style={{ color: category === 'popularity' ? '#ffffff' : '#5e6266' }} onClick={() => setCategory('popularity')}>Popularity</button>
           <button value={'genre'} style={{ color: category === 'genre' ? '#ffffff' : '#5e6266' }} onClick={() => setCategory('genre')}>Genre</button>
           <button value={'theme'} style={{ color: category === 'theme' ? '#ffffff' : '#5e6266' }} onClick={() => setCategory('theme')}>Theme</button>
@@ -71,7 +69,6 @@ const Container = css`
 
 const hotTrackWrapper = css`
   padding-left: 13px;
-  padding-top: 20px;
   width: 100%;
 `
 
@@ -97,12 +94,10 @@ const title = css`
 
 const content = css`
   width: 100%; 
-  background-color: white;
   background: #0C0C0D;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-  margin-bottom: 10px;
-
+  margin-top: 30px;
 `
 
 const buttonWrapper = css`
