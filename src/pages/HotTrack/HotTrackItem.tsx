@@ -73,7 +73,7 @@ const HotTrackItem: React.FC<ITrack> = (props: ITrack) => {
           </div>
           <div css={musicInfo}>
             <span css={song}>{props.name}</span>
-            <span css={singer}>{props.makerInfo.makername}</span>
+            <span css={singer}>{props.makerInfo.makerName}</span>
           </div>
           <div css={moodInfo}>
             {props.mood.map((x) => {
