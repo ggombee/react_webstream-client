@@ -1,3 +1,4 @@
+import  { Maker }  from "./DUMMY_MAKERS_DATA"
 export interface ITrack { 
   id: number, 
   trackimg: string, 
@@ -15,11 +16,6 @@ export interface Mood  {
   moodname : string
 }
 
-export interface Maker  {
-  id : number,
-  makername : string
-}
-
 export const DUMMY_TRACK_DATA: ITrack[] = [
   { 
     id: 1, 
@@ -28,7 +24,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 1,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -51,7 +47,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 2,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -74,7 +70,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 3,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -97,7 +93,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 4,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -120,7 +116,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 5,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -143,7 +139,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 6,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -166,7 +162,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 7,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -189,7 +185,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 8,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -212,7 +208,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 9,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -235,7 +231,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 10,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -258,7 +254,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 11,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -281,7 +277,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 12,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -304,7 +300,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 13,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -327,7 +323,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 14,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -350,7 +346,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 15,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -373,7 +369,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 16,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -396,7 +392,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 17,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -419,7 +415,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 18,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -442,7 +438,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 19,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
@@ -465,7 +461,7 @@ export const DUMMY_TRACK_DATA: ITrack[] = [
     genre: 'POP',
     makerInfo:{
       id : 20,
-      makername : 'kely',
+      makerName : 'kely',
     },
     mood: [
       {
