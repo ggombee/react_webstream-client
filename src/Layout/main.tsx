@@ -2,7 +2,6 @@
 import { jsx, css } from '@emotion/react';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import styled from '@emotion/styled';
 
 import LogoImg from '../assets/Main/logo.png';
 import HomeImg from '../assets/Main/home_off.png';
@@ -43,6 +42,7 @@ export const MainLayout = ({ children }: IMainProps) => {
   const [index, setIndex] = useState(0);
 
   const handleClickMenu = (url: string, index: number) => {
+    console.log(index);
     setIndex(index);
     history.push({
       pathname: url,
@@ -58,7 +58,7 @@ export const MainLayout = ({ children }: IMainProps) => {
             LIBRARY
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/home', 0)}
+              onClick={() => handleClickMenu('/', 0)}
               style={index === 0 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
               {index === 0 ? <img src={HomeActImg} /> : <img src={HomeImg} />}
