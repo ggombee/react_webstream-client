@@ -1,7 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-// import MainPage from '../pages/Main'
+import { Home, HotTrack, BeatMaker, Favorites, PlayList, Cart } from '../features/Main';
+import { Login } from '../features/Auth';
+
 import MainRouter from './main';
+import AuthRouter from './auth';
 
 // const Home = lazy(() => import('./routes/Home'));
 // const About = lazy(() => import('./routes/About'));
@@ -26,8 +29,16 @@ function App(): React.ReactElement {
       <Suspense fallback={<div>Loading.s..</div>}>
         <Switch>
           <Redirect exact from="/" to="/home" />
-          <MainRouter />
-          {/* <Route exact path="/auth" component={AuthPage}/> */}
+          <Route path="/home" component={Home} />
+          <Route path="/hottrack" component={HotTrack} />
+          <Route path="/beatmaker" component={BeatMaker} />
+          <Route path="/favorites" component={Favorites} />
+          <Route path="/playlist" component={PlayList} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/auth/login" component={Login} />
+
+          {/* <MainRouter />
+          <AuthRouter /> */}
         </Switch>
       </Suspense>
     </Router>
