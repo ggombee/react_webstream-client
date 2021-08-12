@@ -1,13 +1,10 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Home, HotTrack, BeatMaker, Favorites, PlayList, Cart } from '../features/Main';
 import { Login } from '../features/Auth';
 
-import MainRouter from './main';
-import AuthRouter from './auth';
-
-// const Home = lazy(() => import('./routes/Home'));
-// const About = lazy(() => import('./routes/About'));
+// import MainRouter from './main';
+// import AuthRouter from './auth';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,21 +23,19 @@ import 'slick-carousel/slick/slick-theme.css';
 function App(): React.ReactElement {
   return (
     <Router>
-      <Suspense fallback={<div>Loading.s..</div>}>
-        <Switch>
-          <Redirect exact from="/" to="/home" />
-          <Route path="/home" component={Home} />
-          <Route path="/hottrack" component={HotTrack} />
-          <Route path="/beatmaker" component={BeatMaker} />
-          <Route path="/favorites" component={Favorites} />
-          <Route path="/playlist" component={PlayList} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/auth/login" component={Login} />
+      <Switch>
+        <Redirect exact from="/" to="/home" />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/hottrack" component={HotTrack} />
+        <Route exact path="/beatmaker" component={BeatMaker} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/playlist" component={PlayList} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/auth/login" component={Login} />
 
-          {/* <MainRouter />
+        {/* <MainRouter />
           <AuthRouter /> */}
-        </Switch>
-      </Suspense>
+      </Switch>
     </Router>
   );
 }

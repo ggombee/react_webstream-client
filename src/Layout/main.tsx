@@ -39,11 +39,9 @@ interface IMainProps {
 
 export const MainLayout = ({ children }: IMainProps) => {
   const history = useHistory();
-  const [index, setIndex] = useState(0);
+  const path = window.location.pathname;
 
-  const handleClickMenu = (url: string, index: number) => {
-    console.log(index);
-    setIndex(index);
+  const handleClickMenu = (url: string) => {
     history.push({
       pathname: url,
     });
@@ -58,10 +56,10 @@ export const MainLayout = ({ children }: IMainProps) => {
             LIBRARY
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/', 0)}
-              style={index === 0 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+              onClick={() => handleClickMenu('/home')}
+              style={path === '/home' ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
-              {index === 0 ? <img src={HomeActImg} /> : <img src={HomeImg} />}
+              {path === '/home' ? <img src={HomeActImg} /> : <img src={HomeImg} />}
               <span
                 css={css`
                   margin-left: 19px;
@@ -72,10 +70,10 @@ export const MainLayout = ({ children }: IMainProps) => {
             </p>
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/hottrack', 1)}
-              style={index === 1 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+              onClick={() => handleClickMenu('/hottrack')}
+              style={path === '/hottrack' ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
-              {index === 1 ? <img src={HotActImg}></img> : <img src={HotImg}></img>}
+              {path === '/hottrack' ? <img src={HotActImg}></img> : <img src={HotImg}></img>}
 
               <span
                 css={css`
@@ -90,10 +88,10 @@ export const MainLayout = ({ children }: IMainProps) => {
             My Music
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/beatmaker', 2)}
-              style={index === 2 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+              onClick={() => handleClickMenu('/beatmaker')}
+              style={path === '/beatmaker' ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
-              {index === 2 ? <img src={BeatActImg}></img> : <img src={BeatImg}></img>}
+              {path === '/beatmaker' ? <img src={BeatActImg}></img> : <img src={BeatImg}></img>}
               <span
                 css={css`
                   margin-left: 19px;
@@ -104,10 +102,10 @@ export const MainLayout = ({ children }: IMainProps) => {
             </p>
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/favorites', 3)}
-              style={index === 3 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+              onClick={() => handleClickMenu('/favorites')}
+              style={path === '/favorites' ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
-              {index === 3 ? <img src={FavoriteActImg}></img> : <img src={FavoriteImg}></img>}
+              {path === '/favorites' ? <img src={FavoriteActImg}></img> : <img src={FavoriteImg}></img>}
               <span
                 css={css`
                   margin-left: 19px;
@@ -118,10 +116,10 @@ export const MainLayout = ({ children }: IMainProps) => {
             </p>
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/playlist', 4)}
-              style={index === 4 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+              onClick={() => handleClickMenu('/playlist')}
+              style={path === '/playlist' ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
-              {index === 4 ? <img src={PlaylistActImg}></img> : <img src={PlaylistImg}></img>}
+              {path === '/playlist' ? <img src={PlaylistActImg}></img> : <img src={PlaylistImg}></img>}
               <span
                 css={css`
                   margin-left: 19px;
@@ -132,10 +130,10 @@ export const MainLayout = ({ children }: IMainProps) => {
             </p>
             <p
               css={MenuItem}
-              onClick={() => handleClickMenu('/cart', 5)}
-              style={index === 5 ? { color: '#FFFFFF' } : { color: '#5E6266' }}
+              onClick={() => handleClickMenu('/cart')}
+              style={path === '/cart' ? { color: '#FFFFFF' } : { color: '#5E6266' }}
             >
-              {index === 5 ? <img src={CartActImg}></img> : <img src={CartImg}></img>}
+              {path === '/cart' ? <img src={CartActImg}></img> : <img src={CartImg}></img>}
               <span
                 css={css`
                   margin-left: 19px;
