@@ -34,8 +34,6 @@ export const HotTrack = () => {
                     margin-left: 38px;
                     font-size: 20px;
                     line-height: 28px;
-                    display: inline;
-                    flex-direction: column;
                   `}
                 >
                   {track.rank}
