@@ -101,7 +101,7 @@ const EventWrapper = css`
   width: 165vh;
   height: 400px;
   left: 282px;
-  top: 135px;
+  top: 120px;
   p {
     font-style: normal;
     font-weight: normal;

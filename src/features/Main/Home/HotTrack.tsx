@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react';
 import React from 'react';
+import { useHistory } from 'react-router';
+
 import ArrowIco from '../../../assets/Main/arrow_forward.png';
 import SmallCardImg from '../../../assets/sample/small.png';
 import FavoriteIcon from '../../../assets/Main/favorite_off.png';
@@ -10,11 +12,13 @@ import { TrackData } from '../../../stores/Main/HotTrack/__mocks__/mockData';
 import { HotTrackState } from '../../../stores/Main/HotTrack/types';
 
 export const HotTrack = () => {
+  const history = useHistory();
+
   return (
     <div css={HotTrackWrapper}>
       <span>
         Hot Track
-        <button>
+        <button onClick={() => history.push({ pathname: '/hottrack' })}>
           More
           <img src={ArrowIco} />
         </button>
@@ -34,6 +38,8 @@ export const HotTrack = () => {
                     margin-left: 38px;
                     font-size: 20px;
                     line-height: 28px;
+                    display: inline;
+                    flex-direction: column;
                   `}
                 >
                   {track.rank}
@@ -98,10 +104,10 @@ export const HotTrack = () => {
 
 const HotTrackWrapper = css`
   position: absolute;
-  width: 60.4vh;
+  width: 650px;
   height: 42px;
   left: 282px;
-  top: 646px;
+  top: 635px;
 
   font-style: normal;
   font-weight: normal;
@@ -117,6 +123,11 @@ const HotTrackWrapper = css`
     font-size: 18px;
     line-height: 25px;
     color: #a5a6a8;
+  }
+
+  img {
+    vertical-align: middle;
+    margin-left: 2px;
   }
 `;
 
