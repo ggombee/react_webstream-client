@@ -33,7 +33,7 @@ export const HotTrack = () => {
 
             <div>
               <span>
-                <p
+                <h1
                   css={css`
                     margin-left: 38px;
                     font-size: 20px;
@@ -43,7 +43,7 @@ export const HotTrack = () => {
                   `}
                 >
                   {track.rank}
-                </p>
+                </h1>
               </span>
             </div>
             <div>

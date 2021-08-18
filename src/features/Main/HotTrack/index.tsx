@@ -3,6 +3,18 @@ import { jsx, css } from '@emotion/react';
 import React from 'react';
 import { MainLayout } from '../../../Layout/main';
 import SelectedTrack from '../../../assets/Main/track_selected.png';
+import SmallCardImg from '../../../assets/sample/small.png';
+
+import HappyIcon from '../../../assets/Main/happy.png';
+import SexyIcon from '../../../assets/Main/sexy.png';
+import FavoriteActiveIcon from '../../../assets/Main/favorite_on.png';
+import FavoriteIcon from '../../../assets/Main/favorite_off.png';
+
+import PlaylistIcon from '../../../assets/Main/playlist_add.png';
+import PriceHoverIcon from '../../../assets/sample/price_hover.png';
+import PriceIcon from '../../../assets/sample/price.png';
+import MoreIcon from '../../../assets/Main/more_off.png';
+import MoreActiveIcon from '../../../assets/Main/more_on.png';
 
 export const HotTrack = () => {
   return (
@@ -38,6 +50,7 @@ export const HotTrack = () => {
             </button>
           </div>
         </div> */}
+
         <div css={TrackListWrapper}>
           <div css={TrackListCategory}>
             <div>
@@ -86,7 +99,1007 @@ export const HotTrack = () => {
               Download
             </span>
           </div>
-          <div css={TrackItem}></div>
+          <div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  1
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  2
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteActiveIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  3
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  4
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  5
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  6
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  7
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  8
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+            <div css={TrackItem}>
+              <div>
+                <h1
+                  css={css`
+                    margin-left: 47px;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #ffffff;
+                    margin-right: 31px;
+                    align-item: center;
+                    vertical-align: middle;
+                  `}
+                >
+                  9
+                </h1>
+              </div>
+              <div>
+                <img
+                  src={SmallCardImg}
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />
+              </div>
+              <div
+                css={css`
+                  margin-right: 150px;
+                `}
+              >
+                <div
+                  css={css`
+                    display: block;
+                    margin-left: 37px;
+                    margin-top: 4px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #ffffff;
+                  `}
+                >
+                  No More
+                  <div
+                    css={css`
+                      margin-top: 2px;
+                      display: block;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #5e6266;
+                    `}
+                  >
+                    Kely
+                  </div>
+                </div>
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                `}
+              >
+                <img
+                  src={HappyIcon}
+                  css={css`
+                    margin-right: 15px;
+                  `}
+                />
+                <img src={SexyIcon} />
+              </div>
+              <div
+                css={css`
+                  margin-top: 15px;
+                  margin-left: 250px;
+                  color: #ffffff;
+                `}
+              >
+                Pop
+              </div>
+              <div
+                css={css`
+                  margin-top: 10px;
+                  margin-left: auto;
+                `}
+              >
+                <img
+                  src={FavoriteIcon}
+                  css={css`
+                    width: 20px;
+                    height: 21px;
+                    margin: 0px 30px 3px 0px;
+                  `}
+                />
+                <img
+                  src={PlaylistIcon}
+                  css={css`
+                    width: 28px;
+                    height: 28px;
+                    margin: 4px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={PriceHoverIcon}
+                  css={css`
+                    margin: 2px 30px 0px 0px;
+                  `}
+                />
+                <img
+                  src={MoreIcon}
+                  css={css`
+                    margin: 2px 15px 5px 0px;
+                  `}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </MainLayout>
@@ -140,7 +1153,7 @@ const TrackListWrapper = css`
   margin-top: 30px;
   position: absolute;
   width: 1591px;
-  height: 700px;
+  height: 650px;
   left: 257px;
   top: 206px;
 
@@ -165,6 +1178,7 @@ const TrackListCategory = css`
 `;
 
 const TrackItem = css`
+  display: flex;
   margin-left: 14px;
   width: 1563px;
   height: 62px;
