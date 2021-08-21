@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react';
-import React from 'react';
+import React, { useState } from 'react';
 import LogoImg from '../../../assets/Main/logo.png';
 import ArrowIcon from '../../../assets/Main/arrow_back.png';
+import LoginCheck from '../../../assets/Main/login_check.png';
+import LoginUncheck from '../../../assets/Main/login_uncheck.png';
 
 import { AuthLayout } from '../../../Layout/auth';
 import { useHistory } from 'react-router';
@@ -21,12 +23,18 @@ import { number } from 'prop-types';
 
 export const Login = () => {
   const history = useHistory();
+  const [isActive, setIsActive] = useState(false);
+
   const handleClickMove = (no: number) => {
     if (no === 0) {
       history.goBack();
     } else {
       alert('준비중입니다');
     }
+  };
+
+  const handleCLickKeepLogin = (active: boolean) => {
+    active ? setIsActive(false) : setIsActive(true);
   };
 
   return (
@@ -99,14 +107,31 @@ export const Login = () => {
               로그인
             </button>
           </div>
-          <div>
-            <input
-              type="radio"
-              css={css`
-                font-size: 13px;
-                background-color: #5e6266;
-              `}
-            />
+          <div
+            css={css`
+              margin-top: 15px;
+              text-align: center;
+            `}
+            onClick={() => handleCLickKeepLogin(isActive)}
+          >
+            {isActive ? (
+              <img
+                src={LoginCheck}
+                css={css`
+                  vertical-align: middle;
+                  margin-right: 10px;
+                `}
+              />
+            ) : (
+              <img
+                src={LoginUncheck}
+                css={css`
+                  vertical-align: middle;
+                  margin-right: 10px;
+                `}
+              />
+            )}
+
             <a
               css={css`
                 font-size: 13px;
@@ -208,6 +233,8 @@ export const Login = () => {
 
 const LoginWrapper = css`
   position: absolute;
+  background-image: url('../assets/Main/background.png');
+  background-size: cover;
 `;
 
 const BackButton = css`
