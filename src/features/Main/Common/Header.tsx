@@ -19,7 +19,8 @@ export const Header = () => {
     <div>
       <Search />
       <div css={ProfileWrapper} onClick={handleClickProfile}>
-        <img src={StarIcon} />
+        <button>Login</button>
+        {/* <img src={StarIcon} />
         <span>Bob</span>
         <img
           src={ProfileImg}
@@ -30,7 +31,7 @@ export const Header = () => {
             left: 1824px;
             top: 38px;
           `}
-        />
+        /> */}
       </div>
     </div>
   );
@@ -42,6 +43,16 @@ const ProfileWrapper = css`
   height: 36px;
   left: 1750px;
   top: 38px;
+  button {
+    border-radius: 80px;
+    fint-size: 30px;
+    padding: 10px 20px;
+    background: #d5162b;
+    border: none;
+    color: #ffffff;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
 
   img {
     margin-top: 2px;
