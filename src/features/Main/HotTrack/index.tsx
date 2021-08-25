@@ -15,8 +15,18 @@ import PriceHoverIcon from '../../../assets/sample/price_hover.png';
 import PriceIcon from '../../../assets/sample/price.png';
 import MoreIcon from '../../../assets/Main/more_off.png';
 import MoreActiveIcon from '../../../assets/Main/more_on.png';
+import { useState } from 'react';
 
 export const HotTrack = () => {
+  const [isCategory, setIsCategory] = useState(0);
+
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClickCate = (no: number) => {
+    setIsCategory(no);
+  };
+
   return (
     <MainLayout>
       <div css={HotTrackWrapper}>
@@ -53,51 +63,97 @@ export const HotTrack = () => {
 
         <div css={TrackListWrapper}>
           <div css={TrackListCategory}>
-            <div>
+            <div onClick={() => handleClickCate(0)}>
               <span
                 css={css`
                   margin-right: 70px;
                   width: 35px;
                   display: block;
-                  color: #ffffff;
+                  cursor: pointer;
                 `}
+                style={isCategory === 0 ? { color: '#ffffff' } : { color: '#5e6266' }}
               >
                 Rank
               </span>
-              <img
-                src={SelectedTrack}
-                css={css`
-                  display: block;
-                `}
-              />
+              {isCategory === 0 && (
+                <img
+                  src={SelectedTrack}
+                  css={css`
+                    display: block;
+                  `}
+                />
+              )}
             </div>
-            <span
-              css={css`
-                margin-right: 70px;
-                width: 82px;
-                color: #5e6266;
-              `}
-            >
-              Lots of bits
-            </span>
-            <span
-              css={css`
-                margin-right: 70px;
-                width: 74px;
-                color: #5e6266;
-              `}
-            >
-              Popularity
-            </span>
-            <span
-              css={css`
-                margin-right: 70px;
-                width: 75px;
-                color: #5e6266;
-              `}
-            >
-              Download
-            </span>
+            <div onClick={() => handleClickCate(1)}>
+              <span
+                css={css`
+                  margin-right: 70px;
+                  width: 82px;
+                  color: #5e6266;
+                  cursor: pointer;
+                `}
+                style={isCategory === 1 ? { color: '#ffffff' } : { color: '#5e6266' }}
+              >
+                Lots of bits
+              </span>
+              {isCategory === 1 && (
+                <img
+                  src={SelectedTrack}
+                  css={css`
+                    display: block;
+                    width: 84px;
+                    height: 1.5px;
+                    cursor: pointer;
+                  `}
+                />
+              )}
+            </div>
+            <div onClick={() => handleClickCate(2)}>
+              <span
+                css={css`
+                  margin-right: 70px;
+                  width: 74px;
+                  color: #5e6266;
+                `}
+                style={isCategory === 2 ? { color: '#ffffff' } : { color: '#5e6266' }}
+              >
+                Popularity
+              </span>
+              {isCategory === 2 && (
+                <img
+                  src={SelectedTrack}
+                  css={css`
+                    display: block;
+                    width: 74px;
+                    height: 1.5px;
+                    cursor: pointer;
+                  `}
+                />
+              )}
+            </div>
+            <div onClick={() => handleClickCate(3)}>
+              <span
+                css={css`
+                  margin-right: 70px;
+                  width: 75px;
+                  color: #5e6266;
+                `}
+                style={isCategory === 3 ? { color: '#ffffff' } : { color: '#5e6266' }}
+              >
+                Download
+              </span>
+              {isCategory === 3 && (
+                <img
+                  src={SelectedTrack}
+                  css={css`
+                    display: block;
+                    width: 74px;
+                    height: 1.5px;
+                    cursor: pointer;
+                  `}
+                />
+              )}
+            </div>
           </div>
           <div>
             <div css={TrackItem}>
