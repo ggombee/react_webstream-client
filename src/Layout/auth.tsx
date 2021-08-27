@@ -2,6 +2,7 @@
 import { jsx, css } from '@emotion/react';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import Background from '../assets/Main/background.png';
 
 /*
  * Auth 레이아웃
@@ -24,10 +25,9 @@ export const AuthLayout = ({ children }: IAuthProps) => {
 };
 
 const AuthWrapper = css`
+
 height: 100vh
-top: 0;
 position: relative;
 background: #000000;
 min-height:100vh;
-min-width:200vh;
 `;
