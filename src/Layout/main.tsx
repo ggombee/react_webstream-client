@@ -63,6 +63,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               <span
                 css={css`
                   margin-left: 19px;
+                  cursor: pointer;
                 `}
               >
                 Home
@@ -78,6 +79,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               <span
                 css={css`
                   margin-left: 19px;
+                  cursor: pointer;
                 `}
               >
                 Hot Track
@@ -95,6 +97,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               <span
                 css={css`
                   margin-left: 19px;
+                  cursor: pointer;
                 `}
               >
                 Beat Maker
@@ -109,6 +112,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               <span
                 css={css`
                   margin-left: 19px;
+                  cursor: pointer;
                 `}
               >
                 Favorites
@@ -123,6 +127,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               <span
                 css={css`
                   margin-left: 19px;
+                  cursor: pointer;
                 `}
               >
                 Playlist
@@ -137,6 +142,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               <span
                 css={css`
                   margin-left: 19px;
+                  cursor: pointer;
                 `}
               >
                 Cart
