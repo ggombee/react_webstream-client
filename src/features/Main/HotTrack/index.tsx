@@ -155,7 +155,7 @@ export const HotTrack = () => {
               )}
             </div>
           </div>
-          <div>
+          <div onClick={() => alert('준비중입니다.')}>
             <div css={TrackItem}>
               <div>
                 <h1
@@ -349,7 +349,7 @@ export const HotTrack = () => {
                 `}
               >
                 <img
-                  src={FavoriteActiveIcon}
+                  src={FavoriteIcon}
                   css={css`
                     width: 20px;
                     height: 21px;
