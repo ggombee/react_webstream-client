@@ -44,8 +44,8 @@ export const Login = () => {
           <button
             css={css`
               border: none;
-              background: #000000;
               color: #ffffff;
+              background: transparent;
               margin-top: 30px;
               margin-left: 10px;
             `}
@@ -233,16 +233,13 @@ export const Login = () => {
 
 const LoginWrapper = css`
   position: absolute;
-  background-image: url('../assets/Main/background.png');
-  background-size: cover;
 `;
 
 const BackButton = css`
   border: none;
-  width: 500px;
+  width: 300px;
   margin: 0;
   border: none;
-  background: #000000;
   color: #ffffff;
   img {
     vertical-align: middle;
