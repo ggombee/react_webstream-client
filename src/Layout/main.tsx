@@ -162,6 +162,7 @@ export const MainLayout = ({ children }: IMainProps) => {
 const MainWrapper = css`
   top: 0;
   bottom: 0;
+  height: 100vh;
   background: #000000;
 `;
 
