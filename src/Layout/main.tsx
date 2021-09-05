@@ -18,6 +18,7 @@ import FavoriteActImg from '../assets/Main/favorite_on.png';
 
 import PlaylistImg from '../assets/Main/playlist_off.png';
 import PlaylistActImg from '../assets/Main/playlist_on.png';
+import { Header } from '../features/Main/Common/Header';
 
 /*
  * 메인 레이아웃
@@ -99,7 +100,10 @@ export const MainLayout = ({ children }: IMainProps) => {
           </div>
         </div>
       </div>
-      <div css={Content}>{children}</div>
+      <div css={Content}>
+        <Header />
+        {children}
+      </div>
     </div>
   );
 };

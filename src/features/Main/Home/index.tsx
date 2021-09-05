@@ -18,7 +18,6 @@ import { Event } from './Event';
 export const Home = () => {
   return (
     <div css={HomeWrapper}>
-      <Search />
       <Event />
       {/* <div css={HomeContent}>홈컨테이너</div> */}
     </div>
