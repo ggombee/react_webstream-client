@@ -58,7 +58,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               onClick={() => handleClickMenu('/home', 0)}
               style={index === 0 ? { color: 'red' } : { color: 'white' }}
             >
-              {index === 0 ? <MenuImg src={HomeActImg}></MenuImg> : <MenuImg src={HomeImg}></MenuImg>}
+              {index === 0 ? <img src={HomeActImg} /> : <img src={HomeImg} />}
               Home
             </p>
             <p
@@ -66,7 +66,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               onClick={() => handleClickMenu('/hottrack', 1)}
               style={index === 1 ? { color: 'red' } : { color: 'white' }}
             >
-              {index === 1 ? <MenuImg src={HotActImg}></MenuImg> : <MenuImg src={HotImg}></MenuImg>}
+              {index === 1 ? <img src={HotActImg}></img> : <img src={HotImg}></img>}
               Hot Track
             </p>
           </div>
@@ -77,7 +77,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               onClick={() => handleClickMenu('/beatmaker', 2)}
               style={index === 2 ? { color: 'red' } : { color: 'white' }}
             >
-              {index === 2 ? <MenuImg src={BeatActImg}></MenuImg> : <MenuImg src={BeatImg}></MenuImg>}
+              {index === 2 ? <img src={BeatActImg}></img> : <img src={BeatImg}></img>}
               Beat Maker
             </p>
             <p
@@ -85,7 +85,7 @@ export const MainLayout = ({ children }: IMainProps) => {
               onClick={() => handleClickMenu('/favorites', 3)}
               style={index === 3 ? { color: 'red' } : { color: 'white' }}
             >
-              {index === 3 ? <MenuImg src={FavoriteActImg}></MenuImg> : <MenuImg src={FavoriteImg}></MenuImg>}
+              {index === 3 ? <img src={FavoriteActImg}></img> : <img src={FavoriteImg}></img>}
               Favorites
             </p>
             <p
@@ -93,13 +93,13 @@ export const MainLayout = ({ children }: IMainProps) => {
               onClick={() => handleClickMenu('/playlist', 4)}
               style={index === 4 ? { color: 'red' } : { color: 'white' }}
             >
-              {index === 4 ? <MenuImg src={PlaylistActImg}></MenuImg> : <MenuImg src={PlaylistImg}></MenuImg>}
+              {index === 4 ? <img src={PlaylistActImg}></img> : <img src={PlaylistImg}></img>}
               Playlist
             </p>
           </div>
         </div>
       </div>
-      <Content>{children}</Content>
+      <div css={Content}>{children}</div>
     </div>
   );
 };
@@ -156,6 +156,10 @@ const MenuGroup = css`
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 100px;
+  img {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
 `;
 
 const MenuItem = css`
@@ -168,12 +172,7 @@ const MenuItem = css`
   color: white;
 `;
 
-const MenuImg = styled.img`
-  margin-right: 10px;
-  margin-top: 10px;
-`;
-
-const Content = styled.div`
+const Content = css`
   height: 100vh;
   overflow: initial;
   background: linear-gradient(180deg, rgba(99, 99, 99, 0) -34.44%, #0d0d0d 42.61%, #000000 100%);
