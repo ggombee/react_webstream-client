@@ -4,18 +4,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import Background from '../assets/Main/background.png';
 
-/*
- * Auth 레이아웃
- * 1. Login
- *   1) Layout
- * 2. Register
- *   1) Layout
- * 3. FindId
- *   1) Layout
- * 2. FindPwd
- *   1) Layout
- */
-
 interface IAuthProps {
   children: React.ReactNode;
 }
@@ -25,9 +13,9 @@ export const AuthLayout = ({ children }: IAuthProps) => {
 };
 
 const AuthWrapper = css`
-
-height: 100vh
-position: relative;
-background: #000000;
-min-height:100vh;
+  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  background-image: url(${Background});
+  background-size: cover;
 `;
