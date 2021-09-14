@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "~/assets*": ["assets*"],
+      "~/components*": ["components*"],
+      "~/pages*": ["pages*"],
+      "~/layouts*": ["layouts*"],
+      "~/styles*": ["styles*"]
+    }
+  }
+}
