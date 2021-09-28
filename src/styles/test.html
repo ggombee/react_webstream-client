@@ -1,0 +1,51 @@
+//
+
+
+<section class="playlist__wrap">
+	<div class="playlist__music playlist__music--beat">
+		<p class="playlist__music playlist__music-noBeat">선택된 비트 없음</p>
+	</div>
+	<div class="playlist__play"><button type="button" class="playlist__btn playlist__btn--prev ir_pm">
+			이전곡 재생
+		</button> <button type="button" class="playlist__btn playlist__btn--play ir_pm">
+			현재곡 재생
+		</button> <button type="button" class="playlist__btn playlist__btn--next ir_pm">
+			다음곡 재생
+		</button> <button type="button" class="playlist__btn playlist__btn--repeat ir_pm">반복 재생
+		</button> <button type="button" class="playlist__btn playlist__btn--shuffle ir_pm">셔플 설정
+		</button></div>
+	<div class="playlist__bar"><span class="playlist__bar-time playlist__bar-time--now">00:00</span>
+		<div class="playlist__bar-range range"><label for="playtime" class="none">재생시간</label> <input type="range"
+				min="0" max="00:00" value="0" step="any" title="재생시간" id="playtime" disabled="disabled"
+				class="range__bar range__bar--play"> <span class="range__value" style="width: 0%;"></span></div> <span
+			class="playlist__bar-time playlist__bar-time--total">00:00</span>
+	</div>
+	<div class="playlist__volume"><button type="button" class="playlist__btn playlist__btn--volume ir_pm">볼륨</button>
+		<div class="playlist__volume-range range"><label for="volume" class="none">볼륨조절</label> <input type="range"
+				min="0" max="100" value="0" step="any" title="볼륨조절" id="volume" class="range__bar"> <span
+				class="range__value" style="width: 100%;"></span></div>
+	</div>
+	<div class="playlist__down"><button type="button" class="playlist__btn playlist__btn--download ir_pm">
+			다운로드
+		</button> <button type="button" class="playlist__btn playlist__btn--buy">
+			구매하기
+		</button></div>
+	<div class="playlist__list"><button type="button" class="playlist__list-btn ir_pm">
+			플레이리스트
+		</button></div>
+</section>
+
+
+//
+
+<aside id="playlist" class="right-playlist" style="bottom: 60px;margin: 0px 0px -100% calc(100% - 320px);opacity: 100;">
+	<div class="right-playlist__header">
+		<h1>현재 재생중인 리스트</h1>
+	</div>
+	<div class="right-playlist__contents right-playlist__contents--none">
+		<p>
+			현재 재생중인 리스트가 없습니다! <br>
+			어떤 비트를 듣고 싶으신가요?
+		</p>
+	</div>
+</aside>
