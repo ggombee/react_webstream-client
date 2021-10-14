@@ -40,9 +40,6 @@ const thumnail = css`
 `
 
 const title = css`
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 28px;
   color: #fff;
@@ -50,9 +47,6 @@ const title = css`
 `
 
 const caption = css`
-  font-family: AppleSDGothicNeoM00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 21px;
   color: #75767c;

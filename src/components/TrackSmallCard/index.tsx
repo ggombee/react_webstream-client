@@ -69,9 +69,6 @@ const ranking = css`
   display: flex;
   align-items: center;
 
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: 25px;
 `
@@ -84,17 +81,11 @@ const musicInfo = css`
 `
 
 const song = css`
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 3px;
 `
 const singer = css`
-  font-family: AppleSDGothicNeoM00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 15px;
   line-height: 20px;
   color: #75767c;

@@ -111,9 +111,6 @@ const titleWrapper = css`
 `
 
 const producerName = css`
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: 25px;
   color: #ffffff;
@@ -130,9 +127,6 @@ const infoWrapper = css`
 `
 
 const infoText = css`
-  font-family: AppleSDGothicNeoM00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 21px;
   color: #75767c;

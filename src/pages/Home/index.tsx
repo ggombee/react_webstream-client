@@ -211,9 +211,6 @@ const moreText = css`
   width: 38px;
   height: 22px;
   margin-top: 4px;
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 22px;
   color: #5e6266;
@@ -240,9 +237,6 @@ const beatMakerHeader = css`
 `
 
 const title = css`
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 26px;
   line-height: 36px;
   color: #ffffff;

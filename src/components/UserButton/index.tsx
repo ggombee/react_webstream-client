@@ -32,9 +32,6 @@ const userBadge = css``
 
 const userName = css`
   margin-left: 6px;
-  font-family: AppleSDGothicNeoB00;
-  font-style: normal;
-  font-weight: normal;
   font-size: 17px;
 `
 

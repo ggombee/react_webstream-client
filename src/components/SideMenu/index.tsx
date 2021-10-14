@@ -90,6 +90,7 @@ const menuWrapper = css`
 
 const menuItemWrapper = css`
   cursor: pointer;
+  margin-top: 20px;
 `
 
 const title = css`
