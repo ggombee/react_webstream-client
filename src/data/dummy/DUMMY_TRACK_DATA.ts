@@ -1,481 +1,485 @@
-import  { Maker }  from "./DUMMY_MAKERS_DATA"
-export interface ITrack { 
-  id: number, 
-  trackimg: string, 
-  name: string, 
-  makerInfo : Maker,
-  genre: string, 
-  mood: Mood[],
-  isLiked: boolean,
-  price:  number, 
-  addPlaylist: boolean,
+import { Maker } from './DUMMY_MAKERS_DATA'
+export interface ITrack {
+  id: number
+  trackimg: string
+  name: string
+  makerInfo: IMaker
+  genre: string
+  mood: Mood[]
+  isLiked: boolean
+  price: number
+  addPlaylist: boolean
 }
 
-export interface Mood  {
-  id : number,
-  moodname : string
+export interface Mood {
+  id: number
+  moodname: string
+}
+
+export interface IMaker {
+  id: number
+  makerName: string
 }
 
 export const DUMMY_TRACK_DATA: ITrack[] = [
-  { 
-    id: 1, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 1,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 1,
-      makerName : 'kely',
+    makerInfo: {
+      id: 1,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 2, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 2,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 2,
-      makerName : 'kely',
+    makerInfo: {
+      id: 2,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 3, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 3,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 3,
-      makerName : 'kely',
+    makerInfo: {
+      id: 3,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 4, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 4,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 4,
-      makerName : 'kely',
+    makerInfo: {
+      id: 4,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 5, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 5,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 5,
-      makerName : 'kely',
+    makerInfo: {
+      id: 5,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 6, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 6,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 6,
-      makerName : 'kely',
+    makerInfo: {
+      id: 6,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 7, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 7,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 7,
-      makerName : 'kely',
+    makerInfo: {
+      id: 7,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 8, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 8,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 8,
-      makerName : 'kely',
+    makerInfo: {
+      id: 8,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 9, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 9,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 9,
-      makerName : 'kely',
+    makerInfo: {
+      id: 9,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 10, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 10,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 10,
-      makerName : 'kely',
+    makerInfo: {
+      id: 10,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 11, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 11,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 11,
-      makerName : 'kely',
+    makerInfo: {
+      id: 11,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 12, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 12,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 12,
-      makerName : 'kely',
+    makerInfo: {
+      id: 12,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 13, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 13,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 13,
-      makerName : 'kely',
+    makerInfo: {
+      id: 13,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 14, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 14,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 14,
-      makerName : 'kely',
+    makerInfo: {
+      id: 14,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 15, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 15,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 15,
-      makerName : 'kely',
+    makerInfo: {
+      id: 15,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 16, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 16,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 16,
-      makerName : 'kely',
+    makerInfo: {
+      id: 16,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 17, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 17,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 17,
-      makerName : 'kely',
+    makerInfo: {
+      id: 17,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 18, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 18,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 18,
-      makerName : 'kely',
+    makerInfo: {
+      id: 18,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 19, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 19,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 19,
-      makerName : 'kely',
+    makerInfo: {
+      id: 19,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
-  { 
-    id: 20, 
-    trackimg: '', 
-    name: 'No More', 
+  {
+    id: 20,
+    trackimg: '',
+    name: 'No More',
     genre: 'POP',
-    makerInfo:{
-      id : 20,
-      makerName : 'kely',
+    makerInfo: {
+      id: 20,
+      makerName: 'kely',
     },
     mood: [
       {
-        id : 1,
-        moodname : 'happy'
+        id: 1,
+        moodname: 'happy',
       },
       {
-        id : 2,
-        moodname : 'sexy'
-      }
+        id: 2,
+        moodname: 'sexy',
+      },
     ],
     isLiked: false,
     price: 40000,
     addPlaylist: false,
   },
 ]
-  

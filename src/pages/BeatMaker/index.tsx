@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import { DUMMY_MAKER_DATA } from 'data/dummy/DUMMY_MAKERS_DATA'
+import MakerItem from './MakerItem'
 
 const BeatMaker = () => {
   return (
@@ -10,7 +11,9 @@ const BeatMaker = () => {
           <p css={title}>Beat Maker</p>
         </div>
         <div css={content}>
-          
+          {DUMMY_MAKER_DATA.map((x) => {
+            return <MakerItem key={x.id} {...x} />
+          })}
         </div>
       </div>
     </div>
@@ -22,7 +25,6 @@ const Container = css`
   flex: 1;
   overflow: auto;
 `
-
 
 const beatMakerWrapper = css`
   padding-left: 13px;
@@ -49,8 +51,11 @@ const title = css`
   color: #ffffff;
 `
 
-const content  = css`
-  width: 100%; 
+const content = css`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
   margin-top: 30px;
 `
 
