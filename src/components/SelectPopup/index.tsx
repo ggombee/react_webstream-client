@@ -35,7 +35,7 @@ const SelectPopup = ({
       document.addEventListener('click', handler)
     }
     return () => document.removeEventListener('click', handler)
-  }, [show])
+  }, [show, setShow])
 
   if (!show) {
     return null
