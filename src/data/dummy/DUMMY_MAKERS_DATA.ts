@@ -18,6 +18,7 @@ export interface Track {
   name: string
   genre: string
   mood: Mood[]
+  imgSrc: string
   isLiked: boolean
   price: number
   addPlaylist: boolean
@@ -34,6 +35,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
         mood: [
           {
             id: 1,
@@ -53,6 +55,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -97,6 +100,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -117,6 +121,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -161,6 +166,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -181,7 +187,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
-
+        imgSrc: 'beat2',
         mood: [
           {
             id: 1,
@@ -225,6 +231,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -245,6 +252,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -289,6 +297,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -309,6 +318,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -353,6 +363,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -373,6 +384,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -417,6 +429,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -437,6 +450,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -481,6 +495,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -501,6 +516,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
@@ -545,6 +561,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Stay',
         genre: 'POP',
+        imgSrc: 'beat1',
 
         mood: [
           {
@@ -565,6 +582,7 @@ export const DUMMY_MAKER_DATA: Maker[] = [
         trackimg: '',
         name: 'Levitating',
         genre: 'POP',
+        imgSrc: 'beat2',
 
         mood: [
           {
