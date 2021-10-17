@@ -6,16 +6,18 @@ import TrackSmallCard from '~/components/TrackSmallCard'
 import makerImg from 'assets/sample/maker.png'
 import followOnIco from 'assets/icons/follow_on.png'
 import followOffIco from 'assets/icons/follow_off.png'
+import beatImg from 'assets/sample/beat1.png'
+import beatImg2 from 'assets/sample/beat2.png'
 
 const MakerItem: React.FC<Maker> = (props: Maker) => {
-  console.log({ props })
+  const [isFollowed, setIsFollowed] = React.useState(props.isFollowed)
+
   return (
     <div css={container}>
       <div css={makerInfo}>
         <div css={image}>
           <img src={makerImg} />
         </div>
-
         <div css={information}>
           <p
             css={css`
@@ -66,10 +68,42 @@ const MakerItem: React.FC<Maker> = (props: Maker) => {
             })}
           </div>
         </div>
-
         <div css={follow}>
-          <img src={followOffIco} />
+          {isFollowed ? (
+            <img src={followOnIco} onClick={() => setIsFollowed(false)} />
+          ) : (
+            <img src={followOffIco} onClick={() => setIsFollowed(true)} />
+          )}
         </div>
+      </div>
+      <div css={beatInfo}>
+        <span>Best Beat</span>
+        {props.bestTrackInfo.map((x) => {
+          return (
+            <div css={beatItem}>
+              <div css={thumbnail}>
+                <img src={x.imgSrc === 'beat1' ? beatImg : beatImg2} />
+              </div>
+              <div css={musicInfo}>
+                <span css={song}>{x.name}</span>
+                <span css={singer}>{props.makerName}</span>
+              </div>
+              <div css={icon}>
+                <svg
+                  width="4"
+                  height="15"
+                  viewBox="0 0 4 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="1.75" cy="1.75" r="1.75" fill="#5E6266" />
+                  <circle cx="1.75" cy="7.19531" r="1.75" fill="#5E6266" />
+                  <circle cx="1.75" cy="12.6387" r="1.75" fill="#5E6266" />
+                </svg>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
@@ -79,12 +113,13 @@ export default MakerItem
 
 const container = css`
   width: 505px;
-  height: 400px;
+  height: 370px;
   display: flex;
+  flex-direction: column;
   background: #151516;
   box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
-  padding-left: 25px;
+  padding-left: 20px;
   padding-top: 25px;
   :hover {
     background: #1d1d1f;
@@ -96,13 +131,11 @@ const container = css`
 `
 
 const makerInfo = css`
+  padding-left: 5px;
   width: 455px;
-  height: 350px;
+  height: 115px;
+  margin-bottom: 39px;
   display: flex;
-  &:not(:last-child) {
-    margin-right: 40px;
-  }
-  margin-bottom: 40px;
 `
 
 const image = css`
@@ -123,14 +156,14 @@ const moodInfo = css`
   align-items: center;
 `
 const moodButton = css`
-  border: 1px solid #3e3f42;
+  border: 1px solid #a2a7ac;
   box-sizing: border-box;
   border-radius: 50px;
   height: 25px;
   line-height: 22px;
   font-size: 14px;
   padding: 0 11px;
-  color: #3e3f42;
+  color: #a2a7ac;
   &:not(:last-child) {
     margin-right: 11px;
   }
@@ -140,4 +173,53 @@ const follow = css`
   margin-left: auto;
 `
 
-const beatInfo = css``
+const beatInfo = css`
+  color: white;
+  font-size: 18px;
+  span {
+    margin-left: 15px;
+  }
+  width: 100%;
+`
+
+const beatItem = css`
+  display: flex;
+  margin-top: 7px;
+  margin-right: 20px;
+  padding : 8px;8px;8px;8px;
+  border-radius: 10px;
+  :hover {
+    background: #151516;
+  }
+
+`
+const musicInfo = css`
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+`
+
+const song = css`
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 3px;
+`
+const singer = css`
+  font-size: 15px;
+  line-height: 20px;
+  color: #75767c;
+`
+
+const thumbnail = css`
+  padding-left: 5px;
+`
+
+const icon = css`
+  width: 4px;
+  height: 14px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+  margin-left: auto;
+  cursor: pointer;
+`
