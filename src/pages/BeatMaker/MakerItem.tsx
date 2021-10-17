@@ -8,9 +8,46 @@ import followOnIco from 'assets/icons/follow_on.png'
 import followOffIco from 'assets/icons/follow_off.png'
 import beatImg from 'assets/sample/beat1.png'
 import beatImg2 from 'assets/sample/beat2.png'
+import SelectPopup, { PopupItem } from '~/components/SelectPopup'
 
 const MakerItem: React.FC<Maker> = (props: Maker) => {
   const [isFollowed, setIsFollowed] = React.useState(props.isFollowed)
+  const [openSelectPopup, setOpenSelectPopup] = React.useState(false)
+
+  const OPTIONS: PopupItem[] = [
+    {
+      key: 1,
+      label: 'Comments',
+      onClick: () => {
+        setOpenSelectPopup(false)
+      },
+    },
+    {
+      key: 2,
+      label: 'Share',
+      onClick: () => {
+        setOpenSelectPopup(false)
+      },
+    },
+    {
+      key: 3,
+      label: 'Go To Track',
+      onClick: () => {
+        setOpenSelectPopup(false)
+      },
+    },
+    {
+      key: 4,
+      label: 'Go To Artist',
+      onClick: () => {
+        setOpenSelectPopup(false)
+      },
+    },
+  ]
+  const handleToggleSelectPopup = () => {
+    alert('준비중입니다.')
+    setOpenSelectPopup((p) => !p)
+  }
 
   return (
     <div css={container}>
@@ -88,18 +125,26 @@ const MakerItem: React.FC<Maker> = (props: Maker) => {
                 <span css={song}>{x.name}</span>
                 <span css={singer}>{props.makerName}</span>
               </div>
-              <div css={icon}>
-                <svg
-                  width="4"
-                  height="15"
-                  viewBox="0 0 4 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="1.75" cy="1.75" r="1.75" fill="#5E6266" />
-                  <circle cx="1.75" cy="7.19531" r="1.75" fill="#5E6266" />
-                  <circle cx="1.75" cy="12.6387" r="1.75" fill="#5E6266" />
-                </svg>
+              <div css={commonIcon}>
+                {/* <SelectPopup
+                  show={openSelectPopup}
+                  setShow={setOpenSelectPopup}
+                  items={OPTIONS}
+                  css={popupContainer}
+                /> */}
+                <button onClick={handleToggleSelectPopup}>
+                  <svg
+                    width="4"
+                    height="15"
+                    viewBox="0 0 4 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="1.75" cy="1.75" r="1.75" fill="#5E6266" />
+                    <circle cx="1.75" cy="7.19531" r="1.75" fill="#5E6266" />
+                    <circle cx="1.75" cy="12.6387" r="1.75" fill="#5E6266" />
+                  </svg>
+                </button>
               </div>
             </div>
           )
@@ -222,4 +267,20 @@ const icon = css`
   margin-right: 20px;
   margin-left: auto;
   cursor: pointer;
+`
+
+const commonIcon = css`
+  height: 14px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+  margin-left: auto;
+  cursor: pointer;
+`
+
+const popupContainer = css`
+  position: absolute;
+  top: 25px;
+  right: 0;
+  z-index: 15;
 `
