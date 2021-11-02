@@ -2,8 +2,11 @@ import React from 'react'
 import { css } from '@emotion/react'
 import StarIcon from '~/assets/icons/stars.png'
 import DefaultProfile from '~/assets/sample/default_user.png'
+import { useHistory } from 'react-router'
 
 const UserButton = () => {
+  const history = useHistory()
+
   return (
     <div css={container}>
       <div css={userBadge}>
@@ -12,7 +15,7 @@ const UserButton = () => {
       <div css={userName}>
         <span>Bob</span>
       </div>
-      <div css={userPicture}>
+      <div css={userPicture} onClick={() => history.push('/login')}>
         <img src={DefaultProfile} alt={'user'} />
       </div>
     </div>
@@ -37,4 +40,5 @@ const userName = css`
 
 const userPicture = css`
   margin-left: 22px;
+  cursor: pointer;
 `
