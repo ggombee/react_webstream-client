@@ -1,59 +1,88 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import { DUMMY_TRACK_DATA } from 'data/dummy/DUMMY_TRACK_DATA'
-import sampleMedImage  from 'assets/sample/medium.png';
-import HotTrackItem from './HotTrackItem';
+import sampleMedImage from 'assets/sample/medium.png'
+import HotTrackItem from './HotTrackItem'
 
 const HotTrack = () => {
   const [category, setCategory] = React.useState('popularity')
   const [subCategory, setSubCategory] = React.useState('rank')
 
   return (
-    <div css={Container}>
+    <div css={container}>
       <div css={hotTrackWrapper}>
         <div css={titleWrapper}>
           <p css={title}>Hot Track</p>
-          <button value={'popularity'} style={{ color: category === 'popularity' ? '#ffffff' : '#5e6266' }} onClick={() => setCategory('popularity')}>Popularity</button>
-          <button value={'genre'} style={{ color: category === 'genre' ? '#ffffff' : '#5e6266' }} onClick={() => setCategory('genre')}>Genre</button>
-          <button value={'theme'} style={{ color: category === 'theme' ? '#ffffff' : '#5e6266' }} onClick={() => setCategory('theme')}>Theme</button>
+          <button
+            value={'popularity'}
+            style={{ color: category === 'popularity' ? '#ffffff' : '#5e6266' }}
+            onClick={() => setCategory('popularity')}
+          >
+            Popularity
+          </button>
+          <button
+            value={'genre'}
+            style={{ color: category === 'genre' ? '#ffffff' : '#5e6266' }}
+            onClick={() => setCategory('genre')}
+          >
+            Genre
+          </button>
+          <button
+            value={'theme'}
+            style={{ color: category === 'theme' ? '#ffffff' : '#5e6266' }}
+            onClick={() => setCategory('theme')}
+          >
+            Theme
+          </button>
         </div>
         <div css={content}>
           <div css={buttonWrapper}>
-            <button value={'rank'}
+            <button
+              value={'rank'}
               style={{
                 color: subCategory === 'rank' ? '#ffffff' : '#5e6266',
-                borderBottom: subCategory === 'rank' ? 'solid 2px red' : ''
+                borderBottom: subCategory === 'rank' ? 'solid 2px red' : '',
               }}
               onClick={() => setSubCategory('rank')}
-            >Rank</button>
-            <button value={'bits'}
+            >
+              Rank
+            </button>
+            <button
+              value={'bits'}
               style={{
                 color: subCategory === 'bits' ? '#ffffff' : '#5e6266',
-                borderBottom: subCategory === 'bits' ? 'solid 2px red' : ''
+                borderBottom: subCategory === 'bits' ? 'solid 2px red' : '',
               }}
               onClick={() => setSubCategory('bits')}
-            >Lots of bits</button>
-            <button value={'popularity2'}
+            >
+              Lots of bits
+            </button>
+            <button
+              value={'popularity2'}
               style={{
                 color: subCategory === 'popularity2' ? '#ffffff' : '#5e6266',
-                borderBottom: subCategory === 'popularity2' ? 'solid 2px red' : ''
+                borderBottom:
+                  subCategory === 'popularity2' ? 'solid 2px red' : '',
               }}
               onClick={() => setSubCategory('popularity2')}
-            >Popularity</button>
-            <button value={'download'}
+            >
+              Popularity
+            </button>
+            <button
+              value={'download'}
               style={{
                 color: subCategory === 'download' ? '#ffffff' : '#5e6266',
-                borderBottom: subCategory === 'download' ? 'solid 2px red' : ''
+                borderBottom: subCategory === 'download' ? 'solid 2px red' : '',
               }}
               onClick={() => setSubCategory('download')}
-            >Download</button>
+            >
+              Download
+            </button>
           </div>
           <div css={tableWrapper}>
-              {DUMMY_TRACK_DATA.map((x) => {
-                return (
-                  <HotTrackItem  key={x.id} {...x}/>
-                )
-              })}
+            {DUMMY_TRACK_DATA.map((x) => {
+              return <HotTrackItem key={x.id} {...x} />
+            })}
           </div>
         </div>
       </div>
@@ -61,7 +90,7 @@ const HotTrack = () => {
   )
 }
 
-const Container = css`
+const container = css`
   display: flex;
   flex: 1;
   overflow: auto;
@@ -93,8 +122,8 @@ const title = css`
 `
 
 const content = css`
-  width: 100%; 
-  background: #0C0C0D;
+  width: 100%;
+  background: #0c0c0d;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   margin-top: 30px;
@@ -119,11 +148,9 @@ const buttonWrapper = css`
 const tableWrapper = css`
   color: white;
   ul {
-    list-style:none;
-    padding-left:0px;
+    list-style: none;
+    padding-left: 0px;
   }
 `
-
-
 
 export default HotTrack
