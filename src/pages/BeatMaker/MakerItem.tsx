@@ -53,7 +53,7 @@ const MakerItem: React.FC<Maker> = (props: Maker) => {
     <div css={container}>
       <div css={makerInfo}>
         <div css={image}>
-          <img src={makerImg} />
+          <img src={makerImg} alt="메이커 이미지" />
         </div>
         <div css={information}>
           <p
