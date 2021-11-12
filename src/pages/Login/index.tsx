@@ -3,6 +3,8 @@ import { css } from '@emotion/react'
 
 import Background from '~/assets/background/background.png'
 import Logo from '~/assets/logo.png'
+import CheckedBox from '~/assets/icons/checked.png'
+import UnCheckedBox from '~/assets/icons/unchecked.png'
 
 const Login = () => {
   const [isSelected, setIsSelected] = React.useState(1)
@@ -45,6 +47,10 @@ const Login = () => {
             <label htmlFor="chk">
               <p>Keep me logged in</p>
             </label>
+            <div css={loginButton}>
+              <span css={loginButtonBar} />
+              <p css={loginButtonContents}>LOGIN NOW</p>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +73,7 @@ const buttonWrapper = css`
 `
 
 const backButton = css`
-  width: 140px;
+  width: 150px;
   height: 21px;
   border-bottom: solid 2px #474747;
   :hover {
@@ -76,8 +82,8 @@ const backButton = css`
 `
 const word = css`
   color: white;
-  margin-left: 70px;
-  width: 66px;
+  margin-left: 60px;
+  width: 80px;
 `
 
 const loginWrapper = css`
@@ -153,13 +159,15 @@ const confirmWrapper = css`
     display: none;
   }
   input[id='chk'] + label {
+    font-family: 'Gmarket';
     display: inline-block;
-    width: 17px;
-    height: 17px;
-    background: #ffffff;
+    width: 22px;
+    height: 22px;
+    background: url(${UnCheckedBox}) center/22px 22px;
     cursor: pointer;
     p {
-      margin-left: 30px;
+      margin-top: 3px;
+      margin-left: 40px;
       width: 333px;
     }
   }
@@ -168,6 +176,43 @@ const confirmWrapper = css`
     clear: both;
     content: '';
   }
+  input[type='checkbox']:checked + label {
+    background: url(${CheckedBox}) center/22px 22px;
+  }
+`
+
+const loginButton = css`
+  width: 380px;
+  height: 58px;
+  background-color: black;
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  :hover {
+    border: solid 2px red;
+    span {
+      background-color: #ffffff;
+    }
+    p {
+      color: white;
+    }
+  }
+`
+
+const loginButtonBar = css`
+  margin-left: 40px;
+  width: 160px;
+  height: 2px;
+  background-color: #484848;
+`
+
+const loginButtonContents = css`
+  font-family: 'Gmarket';
+  margin-left: auto;
+  margin-right: 40px;
+  color: #484848;
 `
 
 export default Login
