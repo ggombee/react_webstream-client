@@ -8,6 +8,12 @@ import UnCheckedBox from '~/assets/icons/unchecked.png'
 
 const Login = () => {
   const [isSelected, setIsSelected] = React.useState(1)
+  const [form, setForm] = React.useState({ id: '', password: '' })
+
+  const handleClickLogin = () => {
+    console.log('form', form)
+  }
+
   return (
     <div css={container}>
       <div css={buttonWrapper}>
@@ -39,15 +45,31 @@ const Login = () => {
             </button>
           </div>
           <div css={inputWrapper}>
-            <input placeholder="Email" />
-            <input placeholder="Password" type="password" />
+            <input
+              placeholder="Email"
+              value={form.id}
+              onChange={(e) => {
+                setForm((prev) => ({ ...prev, id: e.target.value }))
+              }}
+            />
+            <input
+              placeholder="Password"
+              type="password"
+              value={form.password}
+              onChange={(e) => {
+                setForm((prev) => ({
+                  ...prev,
+                  password: e.target.value,
+                }))
+              }}
+            />
           </div>
           <div css={confirmWrapper}>
             <input type="checkbox" id="chk" />
             <label htmlFor="chk">
               <p>Keep me logged in</p>
             </label>
-            <div css={loginButton}>
+            <div css={loginButton} onClick={handleClickLogin}>
               <span css={loginButtonBar} />
               <p css={loginButtonContents}>LOGIN NOW</p>
             </div>
