@@ -5,14 +5,14 @@ import Background from '~/assets/background/background.png'
 import Logo from '~/assets/logo.png'
 import CheckedBox from '~/assets/icons/checked.png'
 import UnCheckedBox from '~/assets/icons/unchecked.png'
+import { useHistory, useLocation } from 'react-router-dom'
+import AuthForm from '../../components/AuthForm'
 
-const Login = () => {
-  const [isSelected, setIsSelected] = React.useState(1)
+const Auth = () => {
+  // const [isSelected, setIsSelected] = React.useState(1)
   const [form, setForm] = React.useState({ id: '', password: '' })
-
-  const handleClickLogin = () => {
-    console.log('form', form)
-  }
+  const history = useHistory()
+  const location = useLocation()
 
   return (
     <div css={container}>
@@ -28,52 +28,27 @@ const Login = () => {
         <div css={content}>
           <div css={titleWrapper}>
             <button
-              onClick={() => setIsSelected(1)}
-              // css={titleButton(isSelected === 1)}
+              onClick={() => history.push('/auth/login')}
               css={titleButton}
-              style={{ borderBottom: isSelected === 1 ? 'solid 2px red' : '' }}
+              style={{
+                borderBottom:
+                  location.pathname === '/auth/login' ? 'solid 2px red' : '',
+              }}
             >
               Sign in
             </button>
             <button
-              onClick={() => setIsSelected(2)}
-              // css={titleButton(isSelected === 2)}
+              onClick={() => history.push('/auth/terms')}
               css={titleButton}
-              style={{ borderBottom: isSelected === 2 ? 'solid 2px red' : '' }}
+              style={{
+                borderBottom:
+                  location.pathname === '/auth/terms' ? 'solid 2px red' : '',
+              }}
             >
               Sign up
             </button>
           </div>
-          <div css={inputWrapper}>
-            <input
-              placeholder="Email"
-              value={form.id}
-              onChange={(e) => {
-                setForm((prev) => ({ ...prev, id: e.target.value }))
-              }}
-            />
-            <input
-              placeholder="Password"
-              type="password"
-              value={form.password}
-              onChange={(e) => {
-                setForm((prev) => ({
-                  ...prev,
-                  password: e.target.value,
-                }))
-              }}
-            />
-          </div>
-          <div css={confirmWrapper}>
-            <input type="checkbox" id="chk" />
-            <label htmlFor="chk">
-              <p>Keep me logged in</p>
-            </label>
-            <div css={loginButton} onClick={handleClickLogin}>
-              <span css={loginButtonBar} />
-              <p css={loginButtonContents}>LOGIN NOW</p>
-            </div>
-          </div>
+          <AuthForm path={location.pathname} />
         </div>
       </div>
     </div>
@@ -119,27 +94,28 @@ const loginWrapper = css`
 
 const logoWrapper = css`
   color: white;
+  padding-right: 30px;
 `
 
 const content = css`
-  margin-top: 94px;
+  align-items: center;
+  margin-top: 74.92px;
   width: 380px;
   height: 580px;
   display: flex;
   flex-direction: column;
 `
 const titleWrapper = css`
-  display: flex;
+  margin-left: 65px;
+  align-items: center;
 `
 
 // const titleButton = (selected: boolean) => {
 // return
 const titleButton = css`
+  margin-right: 80px;
   background-color: transparent;
   color: white;
-  &:not(:last-child) {
-    margin-right: 43px;
-  }
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -237,6 +213,6 @@ const loginButtonContents = css`
   color: #484848;
 `
 
-export default Login
+export default Auth
 
 // border-bottom: ${selected === true ? 'solid 2px red' : ''};
