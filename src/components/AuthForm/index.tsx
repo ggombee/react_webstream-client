@@ -73,8 +73,8 @@ function AuthForm(params: IAuth): React.ReactElement {
             </p>
           </div>
           <div css={termsWrapper}>
-            <input type="checkbox" id="chk" />
-            <label htmlFor="chk">
+            <input type="checkbox" id="check" />
+            <label htmlFor="check">
               <p>Check all I agree</p>
             </label>
             <div
@@ -84,16 +84,17 @@ function AuthForm(params: IAuth): React.ReactElement {
                 width: 446px;
               `}
             />
-            {DUMMY_TERMS_DATA.map((terms: ITerms) => {
-              return (
-                <div key={terms.id} css={() => termsContent(terms.id)}>
-                  <input type="checkbox" id={String(terms.id)} />
-                  <label htmlFor={String(terms.id)}>
-                    <p>{terms.title}</p>
-                  </label>
-                </div>
-              )
-            })}
+            {DUMMY_TERMS_DATA.map((terms: ITerms) => (
+              <div key={terms.id} css={() => termsContent(String(terms.id))}>
+                <input type="checkbox" id={'chk' + String(terms.id)} />
+                <label htmlFor={'chk' + String(terms.id)}>
+                  <p>{terms.title}</p>
+                </label>
+              </div>
+            ))}
+            <div css={nextWrapper}>
+              <div css={nextButton}>Next</div>
+            </div>
           </div>
         </>
       )
@@ -155,7 +156,7 @@ const confirmWrapper = css`
     clear: both;
     content: '';
   }
-  input[type='checkbox']:checked + label {
+  input[id='chk']:checked + label {
     background: url(${CheckedBox}) center/22px 22px;
   }
 `
@@ -208,34 +209,35 @@ const termsTitle = css`
 
 const termsWrapper = css`
   width: 494px;
-  height: 414px;
+  height: auto;
   padding: 30px;
   background-color: black;
   color: white;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  input[id='chk'] {
+  font-size: 18px;
+  p {
+    margin-left: 40px;
+    width: 333px;
+    line-height: 25px;
+  }
+  input[id='check'] {
     display: none;
   }
-  input[id='chk'] + label {
+  input[id='check'] + label {
     font-family: 'Gmarket';
     display: inline-block;
     width: 22px;
     height: 22px;
     background: url(${UnCheckedBox}) center/22px 22px;
     cursor: pointer;
-    p {
-      margin-top: 3px;
-      margin-left: 40px;
-      width: 333px;
-    }
   }
   :after {
     display: block;
     clear: both;
     content: '';
   }
-  input[type='checkbox']:checked + label {
+  input[id='check']:checked + label {
     background: url(${CheckedBox}) center/22px 22px;
   }
 `
@@ -252,11 +254,12 @@ const termsContent = (
     | undefined
 ) => css`
   margin-top: 35px;
-  color: white;
-  input[id=${id}] {
+  color: #686868;
+  font-size: 17px;
+  input[id=chk${id}] {
     display: none;
   }
-  input[id=${id}] + label {
+  input[id=chk${id}] + label {
     font-family: 'Gmarket';
     display: inline-block;
     width: 22px;
@@ -264,9 +267,8 @@ const termsContent = (
     background: url(${UnCheckIcon}) center/22px 22px;
     cursor: pointer;
     p {
-      margin-top: 3px;
-      margin-left: 40px;
-      width: 333px;
+      width: 340px;
+      border-bottom: solid 1px #686868;
     }
   }
   :after {
@@ -275,6 +277,29 @@ const termsContent = (
     content: '';
   }
   input[type='checkbox']:checked + label {
+    p {
+      border-bottom: solid 1px #ffffff;
+    }
+    color: white;
     background: url(${CheckIcon}) center/22px 22px;
   }
+`
+
+const nextWrapper = css`
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+`
+
+const nextButton = css`
+  color: #484848;
+  font-family: 'Gmarket';
+  background: #212326;
+  border: 1px solid #212326;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  width: 380px;
+  height: 58px;
+  padding: 17px 17px 17px 170px;
 `
