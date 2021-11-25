@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-import { Maker } from 'data/dummy/DUMMY_MAKERS_DATA'
+import { Maker } from 'store/Home/types'
 import TrackSmallCard from '~/components/TrackSmallCard'
 import makerImg from 'assets/sample/maker.png'
 import followOnIco from 'assets/icons/follow_on.png'

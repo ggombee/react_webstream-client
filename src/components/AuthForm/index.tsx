@@ -1,4 +1,5 @@
 import React from 'react'
+import produce from 'immer'
 import {
   ComponentSelector,
   css,
@@ -11,22 +12,49 @@ import UnCheckedBox from '~/assets/icons/unchecked_box.png'
 import CheckIcon from '~/assets/icons/checked.png'
 import UnCheckIcon from '~/assets/icons/unchecked.png'
 
-import { DUMMY_TERMS_DATA, ITerms } from '../../data/dummy/DUMMY_TERMS_DATA'
+import { DUMMY_TERMS_DATA } from '../../store/Auth/__mocks__/DUMMY_TERMS_DATA'
 import { ArrayCSSInterpolation } from '@emotion/serialize'
+import { ITerms } from 'store/Auth/types'
 
 interface IAuth {
   path: string
 }
 
+interface Props {
+  index: number
+  isCheck: boolean
+}
+
 function AuthForm(params: IAuth): React.ReactElement {
   const [form, setForm] = React.useState({ id: '', password: '' })
+  const [allChecked, setAllChecked] = React.useState(false)
+  const [termsForm, setTermsForm] = React.useState([
+    {
+      id: 0,
+      label: '',
+      value: '',
+      isCheck: false,
+    },
+  ])
 
   const path = params.path
-  console.log('path', path)
+  console.log('termsForm', termsForm)
 
   const handleClickLogin = () => {
     console.log('form', form)
   }
+
+  const handleTermsForm = (index: number, isCheck: boolean) => {
+    // const newTerms = [...terms]
+    // const res = [...termsForm]
+    // res[index].isCheck = isCheck ? false : true
+    // return res
+    // res.map()
+  }
+
+  React.useEffect(() => {
+    setTermsForm(DUMMY_TERMS_DATA)
+  }, [])
 
   switch (path) {
     case '/auth/login':
@@ -73,10 +101,26 @@ function AuthForm(params: IAuth): React.ReactElement {
             </p>
           </div>
           <div css={termsWrapper}>
-            <input type="checkbox" id="check" />
+            <div
+              css={css`
+                display: flex;
+              `}
+              onClick={() =>
+                allChecked ? setAllChecked(false) : setAllChecked(true)
+              }
+            >
+              <img
+                alt="체크아이콘"
+                src={allChecked ? CheckedBox : UnCheckedBox}
+              />
+              <p style={{ color: allChecked ? 'white' : 'grey' }}>
+                Check all I agree
+              </p>
+              {/* <input type="checkbox" id="check" />
             <label htmlFor="check">
               <p>Check all I agree</p>
-            </label>
+            </label> */}
+            </div>
             <div
               css={css`
                 margin-top: 28px;
@@ -84,14 +128,23 @@ function AuthForm(params: IAuth): React.ReactElement {
                 width: 446px;
               `}
             />
-            {DUMMY_TERMS_DATA.map((terms: ITerms) => (
-              <div key={terms.id} css={() => termsContent(String(terms.id))}>
-                <input type="checkbox" id={'chk' + String(terms.id)} />
-                <label htmlFor={'chk' + String(terms.id)}>
-                  <p>{terms.title}</p>
-                </label>
-              </div>
-            ))}
+            <div css={termsContent}>
+              {termsForm?.map((terms: ITerms, index) => (
+                <div key={terms.id} css={() => termsItem(String(terms.id))}>
+                  <input
+                    type="checkbox"
+                    id={'chk' + String(terms.id)}
+                    checked={terms.isCheck}
+                    onClick={() => {
+                      handleTermsForm(index, terms.isCheck)
+                    }}
+                  />
+                  <label htmlFor={'chk' + String(terms.id)}>
+                    <p>{terms.label}</p>
+                  </label>
+                </div>
+              ))}
+            </div>
             <div css={nextWrapper}>
               <div css={nextButton}>Next</div>
             </div>
@@ -122,7 +175,7 @@ const inputWrapper = css`
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
-    &:not(:last-child) {
+    햣 &:not(:last-child) {
       margin-bottom: 8px;
     }
   }
@@ -216,8 +269,13 @@ const termsWrapper = css`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-size: 18px;
+  img {
+    width: 22px;
+    height: 22px;
+  }
   p {
-    margin-left: 40px;
+    font-family: 'Gmarket';
+    margin-left: 12px;
     width: 333px;
     line-height: 25px;
   }
@@ -241,7 +299,9 @@ const termsWrapper = css`
     background: url(${CheckedBox}) center/22px 22px;
   }
 `
-const termsContent = (
+
+const termsContent = css``
+const termsItem = (
   id:
     | string
     | number
@@ -267,6 +327,7 @@ const termsContent = (
     background: url(${UnCheckIcon}) center/22px 22px;
     cursor: pointer;
     p {
+      margin-left: 40px;
       width: 340px;
       border-bottom: solid 1px #686868;
     }

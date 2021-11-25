@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
-import { DUMMY_TRACK_DATA } from 'data/dummy/DUMMY_TRACK_DATA'
+import { DUMMY_TRACK_DATA } from 'store/Home/__mocks__/DUMMY_TRACK_DATA'
 import sampleMedImage from 'assets/sample/medium.png'
 import HotTrackItem from './HotTrackItem'
 
