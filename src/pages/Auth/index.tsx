@@ -151,48 +151,7 @@ const Auth = () => {
               Sign up
             </button>
           </div>
-          {isSelected === 1 ? (
-            <>
-              <div css={inputWrapper}>
-                <input placeholder="Email" />
-                <input placeholder="Password" type="password" />
-              </div>
-              <div css={confirmWrapper}>
-                <input type="checkbox" id="chk" />
-                <label htmlFor="chk">
-                  <p>Keep me logged in</p>
-                </label>
-                <div css={loginButton} onClick={handleLogin}>
-                  <span css={loginButtonBar} />
-                  <p css={loginButtonContents}>LOGIN NOW</p>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div css={inputWrapper}>
-                <input
-                  placeholder="Email"
-                  onChange={(e) => handleChange(e.target.value, 'email')}
-                />
-                <input
-                  placeholder="Password"
-                  onChange={(e) => handleChange(e.target.value, 'pw')}
-                  type="password"
-                />
-              </div>
-              <div css={confirmWrapper}>
-                {/* <input type="checkbox" id="chk" />
-                <label htmlFor="chk">
-                  <p>Register</p>
-                </label> */}
-                <div css={loginButton} onClick={() => handleRegister()}>
-                  <span css={loginButtonBar} />
-                  <p css={loginButtonContents}>Register</p>
-                </div>
-              </div>
-            </>
-          )}
+
           <AuthForm path={location.pathname} />
         </div>
       </div>
@@ -361,3 +320,46 @@ const loginButtonContents = css`
 export default Auth
 
 // border-bottom: ${selected === true ? 'solid 2px red' : ''};
+
+// {isSelected === 1 ? (
+//   <>
+//     <div css={inputWrapper}>
+//       <input placeholder="Email" />
+//       <input placeholder="Password" type="password" />
+//     </div>
+//     <div css={confirmWrapper}>
+//       <input type="checkbox" id="chk" />
+//       <label htmlFor="chk">
+//         <p>Keep me logged in</p>
+//       </label>
+//       <div css={loginButton} onClick={handleLogin}>
+//         <span css={loginButtonBar} />
+//         <p css={loginButtonContents}>LOGIN NOW</p>
+//       </div>
+//     </div>
+//   </>
+// ) : (
+//   <>
+//     <div css={inputWrapper}>
+//       <input
+//         placeholder="Email"
+//         onChange={(e) => handleChange(e.target.value, 'email')}
+//       />
+//       <input
+//         placeholder="Password"
+//         onChange={(e) => handleChange(e.target.value, 'pw')}
+//         type="password"
+//       />
+//     </div>
+//     <div css={confirmWrapper}>
+//       {/* <input type="checkbox" id="chk" />
+//       <label htmlFor="chk">
+//         <p>Register</p>
+//       </label> */}
+//       <div css={loginButton} onClick={() => handleRegister()}>
+//         <span css={loginButtonBar} />
+//         <p css={loginButtonContents}>Register</p>
+//       </div>
+//     </div>
+//   </>
+// )}

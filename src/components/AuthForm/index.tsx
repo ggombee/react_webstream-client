@@ -175,7 +175,7 @@ const inputWrapper = css`
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
-    햣 &:not(:last-child) {
+    &:not(:last-child) {
       margin-bottom: 8px;
     }
   }
