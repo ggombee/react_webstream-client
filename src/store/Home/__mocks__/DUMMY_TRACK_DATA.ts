@@ -1,25 +1,4 @@
-import { Maker } from './DUMMY_MAKERS_DATA'
-export interface ITrack {
-  id: number
-  trackimg: string
-  name: string
-  makerInfo: IMaker
-  genre: string
-  mood: Mood[]
-  isLiked: boolean
-  price: number
-  addPlaylist: boolean
-}
-
-export interface Mood {
-  id: number
-  moodname: string
-}
-
-export interface IMaker {
-  id: number
-  makerName: string
-}
+import { ITrack } from '../types'
 
 export const DUMMY_TRACK_DATA: ITrack[] = [
   {

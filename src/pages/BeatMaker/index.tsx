@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
-import { DUMMY_MAKER_DATA } from 'data/dummy/DUMMY_MAKERS_DATA'
+import { DUMMY_MAKER_DATA } from 'store/Home/__mocks__/DUMMY_MAKERS_DATA'
 import MakerItem from './MakerItem'
 
 const BeatMaker = () => {

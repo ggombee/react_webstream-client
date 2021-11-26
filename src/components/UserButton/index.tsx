@@ -15,7 +15,7 @@ const UserButton = () => {
       <div css={userName}>
         <span>Bob</span>
       </div>
-      <div css={userPicture} onClick={() => history.push('/login')}>
+      <div css={userPicture} onClick={() => history.push('/auth/login')}>
         <img src={DefaultProfile} alt={'user'} />
       </div>
     </div>
