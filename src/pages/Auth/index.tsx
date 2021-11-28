@@ -5,7 +5,6 @@ import Background from '~/assets/background/background.png'
 import Logo from '~/assets/logo.png'
 import CheckedBox from '~/assets/icons/checked.png'
 import UnCheckedBox from '~/assets/icons/unchecked.png'
-import api from 'hooks/api'
 
 import { useHistory, useLocation } from 'react-router-dom'
 import AuthForm from '../../components/AuthForm'
@@ -15,107 +14,6 @@ const Auth = () => {
   const [form, setForm] = React.useState({ id: '', password: '' })
   const history = useHistory()
   const location = useLocation()
-
-  const [isSelected, setIsSelected] = React.useState(1)
-  const [email, setEmail] = React.useState('')
-  const [pwd, setPwd] = React.useState('')
-  const [userInfo, setUserInfo] = React.useState({
-    email: '',
-    password: '',
-  })
-
-  function handleChange(value: string, type: string) {
-    if (type === 'email') {
-      setEmail(value)
-    } else {
-      if (value.length < 16) {
-        setPwd(value)
-      } else {
-        alert('비밀번호를 16자이하로 작성하세요.')
-      }
-    }
-  }
-
-  const isEmail = (email: string) => {
-    /* eslint-disable-next-line */
-    const emailRegex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
-
-    return emailRegex.test(email)
-  }
-
-  const handleRegister = () => {
-    if (userInfo.email === '' || userInfo.password === '') {
-      if (userInfo.email === '') {
-        alert('이메일을 입력해주세요')
-      } else {
-        alert('비밀번호를 입력해주세요')
-      }
-    } else {
-      if (!isEmail(userInfo.email)) {
-        alert('email 형식으로 입력해주세요')
-      } else {
-        api
-          .post('/register', userInfo)
-          .then((response) => {
-            // if (response.accessToken) {
-            //   localStorage.setItem('token', response.accessToken);
-            //   setIsShow(false);
-            // }
-          })
-          .catch((error) => {
-            console.log('Error during service worker registration:', error)
-          })
-          .finally(
-            () => alert('가입이 완료되었습니다.')
-
-            // history.push({
-            //   pathname: '/board',
-            // }),
-          )
-      }
-    }
-  }
-
-  const handleLogin = () => {
-    if (userInfo.email === '' || userInfo.password === '') {
-      if (userInfo.email === '') {
-        alert('이메일을 입력해주세요')
-      } else {
-        alert('비밀번호를 입력해주세요')
-      }
-    } else {
-      if (!isEmail(userInfo.email)) {
-        alert('email 형식으로 입력해주세요')
-      } else {
-        api
-          .post('/login', userInfo)
-          .then((response) => {
-            // if (response.accessToken) {
-            //   localStorage.setItem('token', response.accessToken);
-            //   setIsShow(false);
-            // }
-          })
-          .catch((error) => {
-            console.log('Error during service worker registration:', error)
-          })
-          .finally(
-            () => alert('로그인이 완료되었습니다.')
-
-            // history.push({
-            //   pathname: '/board',
-            // }),
-          )
-      }
-    }
-  }
-
-  React.useEffect(() => {
-    setUserInfo({
-      email: email,
-      password: pwd,
-    })
-  }, [email, pwd])
 
   return (
     <div css={container}>
@@ -145,7 +43,10 @@ const Auth = () => {
               css={titleButton}
               style={{
                 borderBottom:
-                  location.pathname === '/auth/terms' ? 'solid 2px red' : '',
+                  location.pathname === '/auth/terms' ||
+                  location.pathname === '/auth/register'
+                    ? 'solid 2px red'
+                    : '',
               }}
             >
               Sign up
