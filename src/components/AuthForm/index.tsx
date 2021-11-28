@@ -6,6 +6,8 @@ import {
   CSSObject,
   SerializedStyles,
 } from '@emotion/react'
+import { useHistory } from 'react-router-dom'
+import api from 'hooks/api'
 
 import CheckedBox from '~/assets/icons/checked_box.png'
 import UnCheckedBox from '~/assets/icons/unchecked_box.png'
@@ -36,9 +38,35 @@ function AuthForm(params: IAuth): React.ReactElement {
       isCheck: false,
     },
   ])
+  const history = useHistory()
+  const [email, setEmail] = React.useState('')
+  const [pwd, setPwd] = React.useState('')
+  const [userInfo, setUserInfo] = React.useState({
+    email: '',
+    password: '',
+  })
+
+  function handleChange(value: string, type: string) {
+    if (type === 'email') {
+      setEmail(value)
+    } else {
+      if (value.length < 16) {
+        setPwd(value)
+      } else {
+        alert('비밀번호를 16자이하로 작성하세요.')
+      }
+    }
+  }
 
   const path = params.path
   console.log('termsForm', termsForm)
+
+  React.useEffect(() => {
+    setUserInfo({
+      email: email,
+      password: pwd,
+    })
+  }, [email, pwd])
 
   const handleClickLogin = () => {
     console.log('form', form)
@@ -52,9 +80,90 @@ function AuthForm(params: IAuth): React.ReactElement {
     // res.map()
   }
 
+  const isEmail = (email: string) => {
+    /* eslint-disable-next-line */
+    const emailRegex =
+      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
+
+    return emailRegex.test(email)
+  }
+
+  const handleRegister = () => {
+    if (userInfo.email === '' || userInfo.password === '') {
+      if (userInfo.email === '') {
+        alert('이메일을 입력해주세요')
+      } else {
+        alert('비밀번호를 입력해주세요')
+      }
+    } else {
+      if (!isEmail(userInfo.email)) {
+        alert('email 형식으로 입력해주세요')
+      } else {
+        api
+          .post('/register', userInfo)
+          .then((response) => {
+            // if (response.accessToken) {
+            //   localStorage.setItem('token', response.accessToken);
+            //   setIsShow(false);
+            // }
+          })
+          .catch((error) => {
+            console.log('Error during service worker registration:', error)
+          })
+          .finally(
+            () => alert('가입이 완료되었습니다.')
+
+            // history.push({
+            //   pathname: '/board',
+            // }),
+          )
+      }
+    }
+  }
+
+  const handleLogin = () => {
+    if (userInfo.email === '' || userInfo.password === '') {
+      if (userInfo.email === '') {
+        alert('이메일을 입력해주세요')
+      } else {
+        alert('비밀번호를 입력해주세요')
+      }
+    } else {
+      if (!isEmail(userInfo.email)) {
+        alert('email 형식으로 입력해주세요')
+      } else {
+        api
+          .post('/login', userInfo)
+          .then((response) => {
+            // if (response.accessToken) {
+            //   localStorage.setItem('token', response.accessToken);
+            //   setIsShow(false);
+            // }
+          })
+          .catch((error) => {
+            console.log('Error during service worker registration:', error)
+          })
+          .finally(
+            () => alert('로그인이 완료되었습니다.')
+
+            // history.push({
+            //   pathname: '/board',
+            // }),
+          )
+      }
+    }
+  }
+
   React.useEffect(() => {
     setTermsForm(DUMMY_TERMS_DATA)
   }, [])
+
+  React.useEffect(() => {
+    setUserInfo({
+      email: email,
+      password: pwd,
+    })
+  }, [email, pwd])
 
   switch (path) {
     case '/auth/login':
@@ -130,29 +239,63 @@ function AuthForm(params: IAuth): React.ReactElement {
             />
             <div css={termsContent}>
               {termsForm?.map((terms: ITerms, index) => (
-                <div key={terms.id} css={() => termsItem(String(terms.id))}>
+                <div
+                  key={terms.id}
+                  css={() => termsItem('chk' + String(terms.id))}
+                >
                   <input
                     type="checkbox"
-                    id={'chk' + String(terms.id)}
+                    id={`chk` + String(terms.id)}
                     checked={terms.isCheck}
-                    onClick={() => {
-                      handleTermsForm(index, terms.isCheck)
-                    }}
+                    // onClick={() => {
+                    //   handleTermsForm(index, terms)
+                    // }}
                   />
-                  <label htmlFor={'chk' + String(terms.id)}>
+                  <label htmlFor={`chk` + String(terms.id)}>
                     <p>{terms.label}</p>
                   </label>
                 </div>
               ))}
             </div>
-            <div css={nextWrapper}>
+            <div
+              css={nextWrapper}
+              onClick={() => history.push('/auth/register')}
+            >
               <div css={nextButton}>Next</div>
             </div>
+          </div>
+          <div css={moveButton} onClick={() => history.push('/auth/login')}>
+            Go to Sign in
           </div>
         </>
       )
     case '/auth/register':
-      return <></>
+      return (
+        <>
+          <div css={registerWrapper}>
+            <div css={regiCommonInput}>
+              <p></p>
+              <input
+                placeholder="Email"
+                onChange={(e) => handleChange(e.target.value, 'email')}
+              />
+            </div>
+            <div css={regiCommonInput}>
+              <input
+                placeholder="Password"
+                onChange={(e) => handleChange(e.target.value, 'pw')}
+                type="password"
+              />
+            </div>
+            <div css={confirmWrapper}>
+              <div css={loginButton} onClick={() => handleRegister()}>
+                <span css={loginButtonBar} />
+                <p css={loginButtonContents}>Register</p>
+              </div>
+            </div>
+          </div>
+        </>
+      )
   }
   return <></>
 }
@@ -301,25 +444,15 @@ const termsWrapper = css`
 `
 
 const termsContent = css``
-const termsItem = (
-  id:
-    | string
-    | number
-    | boolean
-    | ComponentSelector
-    | SerializedStyles
-    | CSSObject
-    | ArrayCSSInterpolation
-    | null
-    | undefined
-) => css`
+
+const termsItem = (id: string) => css`
   margin-top: 35px;
   color: #686868;
   font-size: 17px;
-  input[id=chk${id}] {
+  input[id=${id}] {
     display: none;
   }
-  input[id=chk${id}] + label {
+  input[id=${id}] + label {
     font-family: 'Gmarket';
     display: inline-block;
     width: 22px;
@@ -337,7 +470,7 @@ const termsItem = (
     clear: both;
     content: '';
   }
-  input[type='checkbox']:checked + label {
+  input[id=${id}]:checked + label {
     p {
       border-bottom: solid 1px #ffffff;
     }
@@ -362,5 +495,27 @@ const nextButton = css`
   border-radius: 5px;
   width: 380px;
   height: 58px;
-  padding: 17px 17px 17px 170px;
+  padding: 19px 17px 17px 170px;
+  :hover {
+    color: white;
+    background: #000000;
+    border: 1px solid #f6112d;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
 `
+
+const moveButton = css`
+  margin-top: 58px;
+  color: white;
+  font-family: 'Gmarket';
+  font-style: normal;
+  font-size: 14px;
+  line-height: 21px;
+  background: transparent;
+  width: 100px;
+  height: 21px;
+`
+
+const registerWrapper = css``
