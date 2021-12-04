@@ -18,7 +18,8 @@ const Auth = () => {
   return (
     <div css={container}>
       <div css={buttonWrapper}>
-        <button css={backButton}>
+        <button css={backButton}               onClick={() => history.push('/')}
+>
           <div css={word}>GO HOME</div>
         </button>
       </div>

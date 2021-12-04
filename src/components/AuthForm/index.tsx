@@ -61,6 +61,14 @@ function AuthForm(params: IAuth): React.ReactElement {
   const path = params.path
   console.log('termsForm', termsForm)
 
+  const isEmail = (email: string) => {
+    /* eslint-disable-next-line */
+    const emailRegex =
+      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
+
+    return emailRegex.test(email)
+  }
+
   React.useEffect(() => {
     setUserInfo({
       email: email,
@@ -69,7 +77,40 @@ function AuthForm(params: IAuth): React.ReactElement {
   }, [email, pwd])
 
   const handleClickLogin = () => {
-    console.log('form', form)
+    if (userInfo.email === '' || userInfo.password === '') {
+      if (userInfo.email === '') {
+        alert('이메일을 입력해주세요')
+      } else {
+        alert('비밀번호를 입력해주세요')
+      }
+    } else {
+      if (!isEmail(userInfo.email)) {
+        alert('email 형식으로 입력해주세요')
+      } else {
+        console.log('userInfo', userInfo)
+        api
+        .get('/users', )
+          // .post('/auth/login', userInfo)
+          .then((response) => {
+            console.log({response})
+            // alert('로그인이 완료되었습니다.')
+            // if (response.accessToken) {
+            //   localStorage.setItem('token', response.accessToken);
+            //   setIsShow(false);
+            // }
+          })
+          .catch((error) => {
+            console.log('Error during service worker registration:', error)
+          })
+          .finally(
+            () => alert('가입이 완료되었습니다.')
+
+            // history.push({
+            //   pathname: '/board',
+            // }),
+          )
+      }
+    }
   }
 
   const handleTermsForm = (index: number, isCheck: boolean) => {
@@ -80,13 +121,7 @@ function AuthForm(params: IAuth): React.ReactElement {
     // res.map()
   }
 
-  const isEmail = (email: string) => {
-    /* eslint-disable-next-line */
-    const emailRegex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 
-    return emailRegex.test(email)
-  }
 
   const handleRegister = () => {
     if (userInfo.email === '' || userInfo.password === '') {
@@ -99,8 +134,9 @@ function AuthForm(params: IAuth): React.ReactElement {
       if (!isEmail(userInfo.email)) {
         alert('email 형식으로 입력해주세요')
       } else {
+        console.log('userInfo', userInfo)
         api
-          .post('/register', userInfo)
+          .post('/users', userInfo)
           .then((response) => {
             // if (response.accessToken) {
             //   localStorage.setItem('token', response.accessToken);
@@ -283,10 +319,33 @@ function AuthForm(params: IAuth): React.ReactElement {
             <div css={regiCommonInput} >
               <p>Please enter your password you want to use</p>
               <input
-                placeholder="Email"
-                onChange={(e) => handleChange(e.target.value, 'email')}
+                placeholder="Password"
+                type="password"
+                onChange={(e) => handleChange(e.target.value, 'password')}
               />
             </div>
+            {/* -- 이름 닉네임 폰 -- */}
+            {/* <div css={regiCommonInput} >
+              <p>Please enter your name</p>
+              <input
+                placeholder="Name"
+                onChange={(e) => handleChange(e.target.value, 'name')}
+              />
+            </div>
+            <div css={regiCommonInput} >
+              <p>Please enter your nickname</p>
+              <input
+                placeholder="Nickname"
+                onChange={(e) => handleChange(e.target.value, 'nickname')}
+              />
+            </div>
+            <div css={regiCommonInput} >
+              <p>Please enter your phone number</p>
+              <input
+                placeholder="Phone"
+                onChange={(e) => handleChange(e.target.value, 'phone')}
+              />
+            </div> */}
         
             <div css={confirmWrapper}>
               <div css={loginButton} onClick={() => handleRegister()}>

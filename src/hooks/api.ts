@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: process.env.REACT_APP_BASE_API,
+  // baseURL: process.env.REACT_APP_BASE_API,
+  baseURL: "http://15.165.51.93:4000",
+
 })
 
 // // 토큰 갱신까지 대기 타이밍
