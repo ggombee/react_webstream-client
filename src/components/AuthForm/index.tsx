@@ -273,20 +273,21 @@ function AuthForm(params: IAuth): React.ReactElement {
       return (
         <>
           <div css={registerWrapper}>
-            <div css={regiCommonInput}>
-              <p></p>
+          <div css={regiCommonInput} >
+              <p>Please enter your email address</p>
               <input
                 placeholder="Email"
                 onChange={(e) => handleChange(e.target.value, 'email')}
               />
             </div>
-            <div css={regiCommonInput}>
+            <div css={regiCommonInput} >
+              <p>Please enter your password you want to use</p>
               <input
-                placeholder="Password"
-                onChange={(e) => handleChange(e.target.value, 'pw')}
-                type="password"
+                placeholder="Email"
+                onChange={(e) => handleChange(e.target.value, 'email')}
               />
             </div>
+        
             <div css={confirmWrapper}>
               <div css={loginButton} onClick={() => handleRegister()}>
                 <span css={loginButtonBar} />
@@ -518,4 +519,31 @@ const moveButton = css`
   height: 21px;
 `
 
-const registerWrapper = css``
+const registerWrapper = css`
+margin-top: 46px;
+`
+
+const regiCommonInput = css`
+  color: white;
+  font-family: 'Gmarket';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  &:not(:last-child) {
+   margin-bottom: 30px;
+  }
+  input {
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    color: white;
+    width: 380px;
+    padding: 22px 22px 22px 22px;
+    border: none;
+    background-color: black;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+  }
+`
