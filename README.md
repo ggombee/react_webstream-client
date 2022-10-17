@@ -71,13 +71,7 @@ Base : RootRouter
 style
 사실 assets과 함께 써도 되는 폴더인데 왜 빼놨는지 아직도 모르겠음
 
-### 이외 다른 프로젝트 코드 구조 샘플 예 (실무)
-![image](https://user-images.githubusercontent.com/58289110/196109846-4b2fad71-e01d-4a74-ae42-a3e5b8213f20.png)
-![image](https://user-images.githubusercontent.com/58289110/196109916-e349cadd-a81e-4897-b8c1-2aba6a07364f.png)
-![image](https://user-images.githubusercontent.com/58289110/196110012-6ace4758-76df-4801-9c1e-c396a5adcb0c.png)
-![image](https://user-images.githubusercontent.com/58289110/196110085-933af8ff-c8c7-4da8-8584-be865290a994.png)
-
-### 기본 코드 구조
+### 기본 코드 구조 예시
 https://github.com/ggombee/react_ts-redux/tree/master/src
 <br/>
 https://github.com/ggombee/react_MintCamp-Community
@@ -86,6 +80,14 @@ https://github.com/ggombee/catmbtitest
 <br/>
 https://github.com/ggombee/react_webstream-client
 <br/>
+
+### 이외 다른 프로젝트 코드 구조 샘플 예시 (실무)
+![image](https://user-images.githubusercontent.com/58289110/196109846-4b2fad71-e01d-4a74-ae42-a3e5b8213f20.png)
+![image](https://user-images.githubusercontent.com/58289110/196109916-e349cadd-a81e-4897-b8c1-2aba6a07364f.png)
+![image](https://user-images.githubusercontent.com/58289110/196110012-6ace4758-76df-4801-9c1e-c396a5adcb0c.png)
+![image](https://user-images.githubusercontent.com/58289110/196110085-933af8ff-c8c7-4da8-8584-be865290a994.png)
+
+
 
 > api call sample
 ```javascript
