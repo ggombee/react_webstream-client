@@ -48,24 +48,31 @@ You will also see any lint errors in the console.
 > > styles
 
 aseets
-스타일에 필요한 아이콘, 이미지 등을 저장
+<br/>
+-스타일에 필요한 아이콘, 이미지 등을 저장
 
 components (presentation components)
-UI의 여러조합, 목록 밑 차트 같은 기능단의 가장 작은 단위
+<br/>
+- UI의 여러조합, 목록 밑 차트 같은 기능단의 가장 작은 단위
 
 hooks / Utils  (common utility) - 사용하는 사람에 따라 이름 다름
-어떠한 특정한 기능을 하기 위한 CUSTOM HOOKS들의 모음
-공통으로 사용하는 커스텀 훅이나 기능들이 있는곳으로,
+<br/>
+- 어떠한 특정한 기능을 하기 위한 CUSTOM HOOKS들의 모음
+<br/>
+- 공통으로 사용하는 커스텀 훅이나 기능들이 있는곳으로,
 서버통신에 필요한 axios파일이나, 기타 날짜변경 등과 같은 공통함수가 만들어져있는 파일들이 존재
 
 Pages  (container components)
-하나의 페이지, 헬멧의정보와, 초기 요청할 서버 테이터, 컨테이너를 1대1 대응함
+<br/>
+- 하나의 페이지, 헬멧의정보와, 초기 요청할 서버 테이터, 컨테이너를 1대1 대응함
 
 store
-전역 상태관리를 위한 스토어를 관리 하는 공간 이곳에 type, reducer 등 선언
+<br/>
+- 전역 상태관리를 위한 스토어를 관리 하는 공간 이곳에 type, reducer 등 선언
 
-app.tsx
-SPA를 라우팅하는 곳으로, react-router-dom을 사용함
+app.tsx / BASEPAGE..
+<br/>
+- SPA를 라우팅하는 곳으로, react-router-dom을 사용함
 Base : RootRouter
 
 style
