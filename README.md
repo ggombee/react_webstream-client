@@ -71,22 +71,21 @@ Base : RootRouter
 style
 사실 assets과 함께 써도 되는 폴더인데 왜 빼놨는지 아직도 모르겠음
 
-## 이외 다른 프로젝트 코드 구조 샘플 (실무)
+### 이외 다른 프로젝트 코드 구조 샘플 예 (실무)
 ![image](https://user-images.githubusercontent.com/58289110/196109846-4b2fad71-e01d-4a74-ae42-a3e5b8213f20.png)
 ![image](https://user-images.githubusercontent.com/58289110/196109916-e349cadd-a81e-4897-b8c1-2aba6a07364f.png)
 ![image](https://user-images.githubusercontent.com/58289110/196110012-6ace4758-76df-4801-9c1e-c396a5adcb0c.png)
 ![image](https://user-images.githubusercontent.com/58289110/196110085-933af8ff-c8c7-4da8-8584-be865290a994.png)
 
-## 기본 코드 구조
+### 기본 코드 구조
 https://github.com/ggombee/react_ts-redux/tree/master/src
+<br/>
 https://github.com/ggombee/react_MintCamp-Community
+<br/>
 https://github.com/ggombee/catmbtitest
+<br/>
 https://github.com/ggombee/react_webstream-client
-
-3. Setting file
-원활한 개발진행을 위해 린트와 프리티어 설정을 하였고, env파일을 두어 BaseUrl 및 기타 리소스들을 관리하였다.
-.env .prettierrc.json .eslintrc.json package.json jsconfig.json
-
+<br/>
 
 > api call sample
 ```javascript
@@ -101,6 +100,8 @@ api
   ```
 
 ## 3. Setting file
+원활한 개발진행을 위해 린트와 프리티어 설정을 하였고, env파일을 두어 BaseUrl 및 기타 리소스들을 관리하였다.
+.env .prettierrc.json .eslintrc.json package.json jsconfig.json
 
 `.env` 
 `.prettierrc.json`
